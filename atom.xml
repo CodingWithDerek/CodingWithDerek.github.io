@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.chilo-hzl.cn/"/>
-  <updated>2020-02-17T15:18:36.794Z</updated>
+  <updated>2020-02-26T06:43:41.776Z</updated>
   <id>https://www.chilo-hzl.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test</title>
+    <link href="https://www.chilo-hzl.cn/2020/02/26/test/"/>
+    <id>https://www.chilo-hzl.cn/2020/02/26/test/</id>
+    <published>2020-02-26T06:42:11.000Z</published>
+    <updated>2020-02-26T06:43:41.776Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="测试hexo在GitHub和coding上的部署情况"><a href="#测试hexo在GitHub和coding上的部署情况" class="headerlink" title="测试hexo在GitHub和coding上的部署情况"></a>测试hexo在GitHub和coding上的部署情况</h1>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;测试hexo在GitHub和coding上的部署情况&quot;&gt;&lt;a href=&quot;#测试hexo在GitHub和coding上的部署情况&quot; class=&quot;headerlink&quot; title=&quot;测试hexo在GitHub和coding上的部署情况&quot;&gt;&lt;/a&gt;测试hexo在G
+      
+    
+    </summary>
+    
+    
+      <category term="test" scheme="https://www.chilo-hzl.cn/categories/test/"/>
+    
+    
+      <category term="test" scheme="https://www.chilo-hzl.cn/tags/test/"/>
+    
+  </entry>
   
   <entry>
     <title>如何搭建hexo博客</title>
