@@ -13,36 +13,36 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"chilo-hzl","sameAs":["https://github.com/chilo-hzl","/contact"],"image":"gravatar.jpg"},"articleBody":"\n\n\n\n首先在搭建之前，你应该具备以下知识1.熟悉web前端技术（HTML,CSS,Javascript）\n2.有Github账号，熟悉Github上面的操作\n3.熟悉Git, 电脑上安装Git\n4.有Node.js基础知识，电脑上安装Node.js,因为Hexo博客框架是基于Node.js写的\n5.有安装npm软件包的相关知识\n6.熟悉Hexo开发文档\n如果你不熟悉上面内容，我建议你先学习上面内容，这样在搭建过程中如果遇到问题你可以通过控制台打印的信息快速找到自己在哪出错，并且下载模板后你完全可以根据自己的需求定制页面内容，做技术一定要知道所以然，而不是简单的copy\n\n\nGit是分布式版本控制系统，Github是代码托管平台，下面超链接比较优质的内容，你可以查看1.这篇博文告诉你怎样注册Github账号，一些基本的Github操作，如何下载Git，如何初步使用Git：网页链接\n2.这个是Git操作的视频讲解，这个老师讲的很好，他后面课程中的Eclipse部分大家可以不用听，因为暂时用不到：视频地址链接\n3.这个是廖雪峰老师的Git讲解，你可以看一下：网址链接\n4.这篇文章讲述了Github的详细安装过程以及配置：网址链接\n在这个过程中你可能会遇到一些专业术语，如果你查资料可以解决就ok,如果你查了好多资料还是一头雾水的话，你可以先放下，后续实践中你会慢慢理解的，还有大家不要怕出错，大不了从头再来，千万不要害怕。当然上述链接可能并不能满足你的需求，没关系，你要多百度。\n\n\nWeb前端技术1.这个平台虽然比较老，但内容真的很优质，包括HTML，CSS，JavaScript以及其他的一些Web技术，上面每个都有实例，强烈推荐：网址链接\n2.这个视频使我首次接触到的Web前端技术，也是因为看来这个视频，我觉得Web前端技术很酷，很好玩，上面孙俏老师讲的很好：网址链接\n\n\nNPM1.初学者主要使用npm install命令安装依赖^1比较多一点，这篇文章讲述了npm install的三个用法：网址链接\n2.大家也可以上NPM官网去看相关文档，对于初学者来说，了解什么是NPM是十分重要的：网址链接\n现在正式开始搭建，我以tranquilpeak主题为例（操作系统为win10）1.安装Hexo,使用win+R命令，在对话框中键入cmd打开CMD窗口，执行npm install -g hexo-cli安装Hexo，安装之后，在该CMD窗口中输入hexo -v,若出现下图所示样子，表明安装成功\n\n\n2.在你的D盘新建一个文件夹（可以是任意盘，不一定是D盘）命名成你想要的名字，我将它命名为myBlog,进入该文件夹，右击鼠标点击Git Bash Here,进入Git Bash命令行，输入hexo init,命令执行完成后再执行命令npm install安装依赖(在Git Bash页面没有进度条显示，请耐心等一两分钟)，再在此窗口执行npm install hexo-deployer-git --save(这个插件部署的时候要用，不然无法部署到Github仓库)，关闭Git Bash窗口，进入你博客文件夹的根目录，打开_config.yml文件，找到deploy字段，加入下列代码：\n1234deploy:  type: git  repo: https://github.com/chilo-hzl/chilo-hzl.github.io.git  branch: master\n\n请将上面的chilo-hzl/chilo-hzl.github.io字段修改成你自己的，在这个文件中继续修改，请修改title,description,author,url,url为你的博客url(例如我的是：https://chilo-hzl.github.io/ )，点击 网址链接  查看主题作者的配置指导继续配置，内容是英文，如果你英语不好的话，我建议你用谷歌翻译，在Language configuration中，打开tranquilpeak的languages文件夹，找到author字段（在页面尾部）键入bio和job的值 （这两个值将会在你头像下显示）。主题作者写的配置文件比较详细，我把一些作者说的不太清楚的再说一下，再把我踩的坑说一下，还有一些大家暂时用不到的配置说一下:\na. 在博客根目录_config_yml中的plugins字段要写成Plugins，不然hexo s命令会出错\nb. 按照配置文档配置主题时顺序不能乱，否则会出现严重错误（比如一个字段本应该在A页面显示，却在B页面显示）\nc. Google Analytics和Modifying the theme这两个你刚开始搭建的时候暂时不要动，等你把这个主题的代码研究差不多的时候你再做配置和修改\nd. 在搭建的时候遇到问题首先检查自己是否安装了相关插件，如果还不能解决的话上Github的issues查看是否有关于该问题的解决方案，其次再百度，如果还是不能解决的话，你可以在Github的issues页面对主题作者提问，一般的话他都会回复你，发现主题BUG的话你也可以对他open issue.\ne. 写博客的时候如果用到引用标签（类似标签都是这样）的话要注意：\n12345# one&#123;% blockquote david %&#125;block1&#123;% endblockquote %&#125;## two  &lt;!--这一行会解析错误--&gt;&#123;% blockquote frank %&#125;block2&#123;% endblockquote %&#125;\n\n123456789# one&#123;% blockquote david %&#125;block1&#123;% endblockquote %&#125;## two  &lt;!--这样写的话这一行才会正确解析（这跟Hexo的渲染库函数有关）--&gt;&#123;% blockquote frank %&#125;block2&#123;% endblockquote %&#125;\n\nf. 用Typora编辑器写完代码块后应选择语言，不然行号显示不出来\n剩下的话应该不是问题，你只要按照主题作者的配置文件一步步来，你应该可以正常搭建出来的，但是每个人的情况可能不一样，但不要怕，大不了从头再来，多试几次就好了。","dateCreated":"2020-02-16T22:54:53+08:00","dateModified":"2020-02-17T23:18:36+08:00","datePublished":"2020-02-16T22:54:53+08:00","description":"在这篇博客中我将告诉你如何搭建属于自己的hexo博客网站","headline":"如何搭建hexo博客","image":["chatu2.jpg","chatu1.jpg"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://890spw.coding-pages.com/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"},"publisher":{"@type":"Organization","name":"chilo-hzl","sameAs":["https://github.com/chilo-hzl","/contact"],"image":"gravatar.jpg","logo":{"@type":"ImageObject","url":"gravatar.jpg"}},"url":"https://890spw.coding-pages.com/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/","keywords":"hexo","thumbnailUrl":"chatu2.jpg"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"chilo-hzl","sameAs":["https://github.com/chilo-hzl","/contact"],"image":"gravatar.jpg"},"articleBody":"\n\n\n\n首先在搭建之前，你应该具备以下知识1.熟悉web前端技术（HTML,CSS,Javascript）\n2.有Github账号，熟悉Github上面的操作\n3.熟悉Git, 电脑上安装Git\n4.有Node.js基础知识，电脑上安装Node.js,因为Hexo博客框架是基于Node.js写的\n5.有安装npm软件包的相关知识\n6.熟悉Hexo开发文档\n如果你不熟悉上面内容，我建议你先学习上面内容，这样在搭建过程中如果遇到问题你可以通过控制台打印的信息快速找到自己在哪出错，并且下载模板后你完全可以根据自己的需求定制页面内容，做技术一定要知道所以然，而不是简单的copy\n\n\nGit是分布式版本控制系统，Github是代码托管平台，下面超链接比较优质的内容，你可以查看1.这篇博文告诉你怎样注册Github账号，一些基本的Github操作，如何下载Git，如何初步使用Git：网页链接\n2.这个是Git操作的视频讲解，这个老师讲的很好，他后面课程中的Eclipse部分大家可以不用听，因为暂时用不到：视频地址链接\n3.这个是廖雪峰老师的Git讲解，你可以看一下：网址链接\n4.这篇文章讲述了Github的详细安装过程以及配置：网址链接\n在这个过程中你可能会遇到一些专业术语，如果你查资料可以解决就ok,如果你查了好多资料还是一头雾水的话，你可以先放下，后续实践中你会慢慢理解的，还有大家不要怕出错，大不了从头再来，千万不要害怕。当然上述链接可能并不能满足你的需求，没关系，你要多百度。\n\n\nWeb前端技术1.这个平台虽然比较老，但内容真的很优质，包括HTML，CSS，JavaScript以及其他的一些Web技术，上面每个都有实例，强烈推荐：网址链接\n2.这个视频使我首次接触到的Web前端技术，也是因为看来这个视频，我觉得Web前端技术很酷，很好玩，上面孙俏老师讲的很好：网址链接\n\n\nNPM1.初学者主要使用npm install命令安装依赖^1比较多一点，这篇文章讲述了npm install的三个用法：网址链接\n2.大家也可以上NPM官网去看相关文档，对于初学者来说，了解什么是NPM是十分重要的：网址链接\n现在正式开始搭建，我以tranquilpeak主题为例（操作系统为win10）1.安装Hexo,使用win+R命令，在对话框中键入cmd打开CMD窗口，执行npm install -g hexo-cli安装Hexo，安装之后，在该CMD窗口中输入hexo -v,若出现下图所示样子，表明安装成功\n\n\n2.在你的D盘新建一个文件夹（可以是任意盘，不一定是D盘）命名成你想要的名字，我将它命名为myBlog,进入该文件夹，右击鼠标点击Git Bash Here,进入Git Bash命令行，输入hexo init,命令执行完成后再执行命令npm install安装依赖(在Git Bash页面没有进度条显示，请耐心等一两分钟)，再在此窗口执行npm install hexo-deployer-git --save(这个插件部署的时候要用，不然无法部署到Github仓库)，关闭Git Bash窗口，进入你博客文件夹的根目录，打开_config.yml文件，找到deploy字段，加入下列代码：\n1234deploy:  type: git  repo: https://github.com/chilo-hzl/chilo-hzl.github.io.git  branch: master\n\n请将上面的chilo-hzl/chilo-hzl.github.io字段修改成你自己的，在这个文件中继续修改，请修改title,description,author,url,url为你的博客url(例如我的是：https://chilo-hzl.github.io/ )，点击 网址链接  查看主题作者的配置指导继续配置，内容是英文，如果你英语不好的话，我建议你用谷歌翻译，在Language configuration中，打开tranquilpeak的languages文件夹，找到author字段（在页面尾部）键入bio和job的值 （这两个值将会在你头像下显示）。主题作者写的配置文件比较详细，我把一些作者说的不太清楚的再说一下，再把我踩的坑说一下，还有一些大家暂时用不到的配置说一下:\na. 在博客根目录_config_yml中的plugins字段要写成Plugins，不然hexo s命令会出错\nb. 按照配置文档配置主题时顺序不能乱，否则会出现严重错误（比如一个字段本应该在A页面显示，却在B页面显示）\nc. Google Analytics和Modifying the theme这两个你刚开始搭建的时候暂时不要动，等你把这个主题的代码研究差不多的时候你再做配置和修改\nd. 在搭建的时候遇到问题首先检查自己是否安装了相关插件，如果还不能解决的话上Github的issues查看是否有关于该问题的解决方案，其次再百度，如果还是不能解决的话，你可以在Github的issues页面对主题作者提问，一般的话他都会回复你，发现主题BUG的话你也可以对他open issue.\ne. 写博客的时候如果用到引用标签（类似标签都是这样）的话要注意：\n12345# one&#123;% blockquote david %&#125;block1&#123;% endblockquote %&#125;## two  &lt;!--这一行会解析错误--&gt;&#123;% blockquote frank %&#125;block2&#123;% endblockquote %&#125;\n\n123456789# one&#123;% blockquote david %&#125;block1&#123;% endblockquote %&#125;## two  &lt;!--这样写的话这一行才会正确解析（这跟Hexo的渲染库函数有关）--&gt;&#123;% blockquote frank %&#125;block2&#123;% endblockquote %&#125;\n\nf. 用Typora编辑器写完代码块后应选择语言，不然行号显示不出来\n剩下的话应该不是问题，你只要按照主题作者的配置文件一步步来，你应该可以正常搭建出来的，但是每个人的情况可能不一样，但不要怕，大不了从头再来，多试几次就好了。","dateCreated":"2020-02-16T22:54:53+08:00","dateModified":"2020-02-17T23:18:36+08:00","datePublished":"2020-02-16T22:54:53+08:00","description":"在这篇博客中我将告诉你如何搭建属于自己的hexo博客网站","headline":"如何搭建hexo博客","image":["chatu2.jpg","chatu1.jpg"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.chilo-hzl-cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"},"publisher":{"@type":"Organization","name":"chilo-hzl","sameAs":["https://github.com/chilo-hzl","/contact"],"image":"gravatar.jpg","logo":{"@type":"ImageObject","url":"gravatar.jpg"}},"url":"https://www.chilo-hzl-cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/","keywords":"hexo","thumbnailUrl":"chatu2.jpg"}</script>
     <meta name="description" content="在这篇博客中我将告诉你如何搭建属于自己的hexo博客网站">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="如何搭建hexo博客">
-<meta property="og:url" content="https://890spw.coding-pages.com/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:url" content="https://www.chilo-hzl-cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/index.html">
 <meta property="og:site_name" content="chilo-hzl&#39;s Blog">
 <meta property="og:description" content="在这篇博客中我将告诉你如何搭建属于自己的hexo博客网站">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://890spw.coding-pages.com/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/web.jpg">
-<meta property="og:image" content="https://890spw.coding-pages.com/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/peizhi2.jpg">
+<meta property="og:image" content="https://www.chilo-hzl-cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/web.jpg">
+<meta property="og:image" content="https://www.chilo-hzl-cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/peizhi2.jpg">
 <meta property="article:published_time" content="2020-02-16T14:54:53.000Z">
 <meta property="article:modified_time" content="2020-02-17T15:18:36.794Z">
 <meta property="article:author" content="chilo-hzl">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://890spw.coding-pages.com/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/web.jpg">
+<meta name="twitter:image" content="https://www.chilo-hzl-cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/web.jpg">
     
     
         
     
     
-        <meta property="og:image" content="https://890spw.coding-pages.com/assets/images/gravatar.jpg"/>
+        <meta property="og:image" content="https://www.chilo-hzl-cn/assets/images/gravatar.jpg"/>
     
     
-        <meta property="og:image" content="https://890spw.coding-pages.com/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/chatu2.jpg"/>
-        <meta class="swiftype" name="image" data-type="enum" content="https://890spw.coding-pages.com/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/chatu2.jpg"/>
+        <meta property="og:image" content="https://www.chilo-hzl-cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/chatu2.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="https://www.chilo-hzl-cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/chatu2.jpg"/>
     
     
-        <meta property="og:image" content="https://890spw.coding-pages.com/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/chatu1.jpg"/>
-        <meta class="swiftype" name="image" data-type="enum" content="https://890spw.coding-pages.com/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/chatu1.jpg"/>
+        <meta property="og:image" content="https://www.chilo-hzl-cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/chatu1.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="https://www.chilo-hzl-cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/chatu1.jpg"/>
     
     
     <!--STYLES-->
@@ -402,7 +402,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://890spw.coding-pages.com/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://www.chilo-hzl-cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
                     title="Share on Facebook"
                     aria-label="Share on Facebook"
                 >
@@ -415,7 +415,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://twitter.com/intent/tweet?text=https://890spw.coding-pages.com/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                    target="new" href="https://twitter.com/intent/tweet?text=https://www.chilo-hzl-cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
                     title="Share on Twitter"
                     aria-label="Share on Twitter"
                 >
@@ -428,7 +428,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://plus.google.com/share?url=https://890spw.coding-pages.com/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                    target="new" href="https://plus.google.com/share?url=https://www.chilo-hzl-cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
                     title="Share on Google+"
                     aria-label="Share on Google+"
                 >
@@ -441,7 +441,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="http://service.weibo.com/share/share.php?&amp;title=https://890spw.coding-pages.com/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                    target="new" href="http://service.weibo.com/share/share.php?&amp;title=https://www.chilo-hzl-cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
                     title="Share on Weibo"
                     aria-label="Share on Weibo"
                 >
@@ -454,7 +454,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=https://890spw.coding-pages.com/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/&amp;title=如何搭建hexo博客"
+                    target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.chilo-hzl-cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/&amp;title=如何搭建hexo博客"
                     title="Share on QQ"
                     aria-label="Share on QQ"
                 >
@@ -467,7 +467,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://890spw.coding-pages.com/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                    target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.chilo-hzl-cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
                     title="Share on Qzone"
                     aria-label="Share on Qzone"
                 >
@@ -556,7 +556,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://890spw.coding-pages.com/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://www.chilo-hzl-cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
                     title="Share on Facebook"
                     aria-label="Share on Facebook"
                 >
@@ -569,7 +569,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://twitter.com/intent/tweet?text=https://890spw.coding-pages.com/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                    target="new" href="https://twitter.com/intent/tweet?text=https://www.chilo-hzl-cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
                     title="Share on Twitter"
                     aria-label="Share on Twitter"
                 >
@@ -582,7 +582,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://plus.google.com/share?url=https://890spw.coding-pages.com/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                    target="new" href="https://plus.google.com/share?url=https://www.chilo-hzl-cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
                     title="Share on Google+"
                     aria-label="Share on Google+"
                 >
@@ -595,7 +595,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="http://service.weibo.com/share/share.php?&amp;title=https://890spw.coding-pages.com/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                    target="new" href="http://service.weibo.com/share/share.php?&amp;title=https://www.chilo-hzl-cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
                     title="Share on Weibo"
                     aria-label="Share on Weibo"
                 >
@@ -608,7 +608,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=https://890spw.coding-pages.com/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/&amp;title=如何搭建hexo博客"
+                    target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.chilo-hzl-cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/&amp;title=如何搭建hexo博客"
                     title="Share on QQ"
                     aria-label="Share on QQ"
                 >
@@ -621,7 +621,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://890spw.coding-pages.com/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                    target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.chilo-hzl-cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
                     title="Share on Qzone"
                     aria-label="Share on Qzone"
                 >
@@ -655,7 +655,7 @@
                     <a
                         class="share-option-btn"
                         target="new"
-                        href="https://www.facebook.com/sharer/sharer.php?u=https://890spw.coding-pages.com/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                        href="https://www.facebook.com/sharer/sharer.php?u=https://www.chilo-hzl-cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
                         aria-label="Share on Facebook"
                     >
                         <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
@@ -668,7 +668,7 @@
                     <a
                         class="share-option-btn"
                         target="new"
-                        href="https://twitter.com/intent/tweet?text=https://890spw.coding-pages.com/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                        href="https://twitter.com/intent/tweet?text=https://www.chilo-hzl-cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
                         aria-label="Share on Twitter"
                     >
                         <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
@@ -681,7 +681,7 @@
                     <a
                         class="share-option-btn"
                         target="new"
-                        href="https://plus.google.com/share?url=https://890spw.coding-pages.com/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                        href="https://plus.google.com/share?url=https://www.chilo-hzl-cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
                         aria-label="Share on Google+"
                     >
                         <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
@@ -694,7 +694,7 @@
                     <a
                         class="share-option-btn"
                         target="new"
-                        href="http://service.weibo.com/share/share.php?&amp;title=https://890spw.coding-pages.com/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                        href="http://service.weibo.com/share/share.php?&amp;title=https://www.chilo-hzl-cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
                         aria-label="Share on Weibo"
                     >
                         <i class="fab fa-weibo" aria-hidden="true"></i><span>Share on Weibo</span>
@@ -707,7 +707,7 @@
                     <a
                         class="share-option-btn"
                         target="new"
-                        href="http://connect.qq.com/widget/shareqq/index.html?url=https://890spw.coding-pages.com/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/&amp;title=如何搭建hexo博客"
+                        href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.chilo-hzl-cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/&amp;title=如何搭建hexo博客"
                         aria-label="Share on QQ"
                     >
                         <i class="fab fa-qq" aria-hidden="true"></i><span>Share on QQ</span>
@@ -720,7 +720,7 @@
                     <a
                         class="share-option-btn"
                         target="new"
-                        href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://890spw.coding-pages.com/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                        href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.chilo-hzl-cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
                         aria-label="Share on Qzone"
                     >
                         <i class="fa fa-star" aria-hidden="true"></i><span>Share on Qzone</span>
@@ -796,17 +796,17 @@
                     <div class="media-left">
                         <a
                             class="link-unstyled"
-                            href="https://890spw.coding-pages.com/2020/02/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"
+                            href="https://www.chilo-hzl-cn/2020/02/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"
                             aria-label=": 我的第一篇博客"
                         >
-                            <img class="media-image" src="https://890spw.coding-pages.com/2020/02/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/chatu.jpg" width="90" height="90"/>
+                            <img class="media-image" src="https://www.chilo-hzl-cn/2020/02/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/chatu.jpg" width="90" height="90"/>
                         </a>
                     </div>
                     
                     <div class="media-body">
                         <a
                             class="link-unstyled"
-                            href="https://890spw.coding-pages.com/2020/02/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"
+                            href="https://www.chilo-hzl-cn/2020/02/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"
                             aria-label=": 我的第一篇博客"
                         >
                             <h3 class="media-heading">我的第一篇博客</h3>
@@ -830,17 +830,17 @@
                     <div class="media-left">
                         <a
                             class="link-unstyled"
-                            href="https://890spw.coding-pages.com/2020/02/13/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B/"
+                            href="https://www.chilo-hzl-cn/2020/02/13/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B/"
                             aria-label=": 个人简介"
                         >
-                            <img class="media-image" src="https://890spw.coding-pages.com/2020/02/13/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B/chatu2.jpg" width="90" height="90"/>
+                            <img class="media-image" src="https://www.chilo-hzl-cn/2020/02/13/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B/chatu2.jpg" width="90" height="90"/>
                         </a>
                     </div>
                     
                     <div class="media-body">
                         <a
                             class="link-unstyled"
-                            href="https://890spw.coding-pages.com/2020/02/13/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B/"
+                            href="https://www.chilo-hzl-cn/2020/02/13/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B/"
                             aria-label=": 个人简介"
                         >
                             <h3 class="media-heading">个人简介</h3>
@@ -863,17 +863,17 @@
                     <div class="media-left">
                         <a
                             class="link-unstyled"
-                            href="https://890spw.coding-pages.com/2020/02/13/%E5%85%8D%E8%B4%B9%E7%A6%8F%E5%88%A9/"
+                            href="https://www.chilo-hzl-cn/2020/02/13/%E5%85%8D%E8%B4%B9%E7%A6%8F%E5%88%A9/"
                             aria-label=": 免费福利"
                         >
-                            <img class="media-image" src="https://890spw.coding-pages.com/2020/02/13/%E5%85%8D%E8%B4%B9%E7%A6%8F%E5%88%A9/image-1.jpg" width="90" height="90"/>
+                            <img class="media-image" src="https://www.chilo-hzl-cn/2020/02/13/%E5%85%8D%E8%B4%B9%E7%A6%8F%E5%88%A9/image-1.jpg" width="90" height="90"/>
                         </a>
                     </div>
                     
                     <div class="media-body">
                         <a
                             class="link-unstyled"
-                            href="https://890spw.coding-pages.com/2020/02/13/%E5%85%8D%E8%B4%B9%E7%A6%8F%E5%88%A9/"
+                            href="https://www.chilo-hzl-cn/2020/02/13/%E5%85%8D%E8%B4%B9%E7%A6%8F%E5%88%A9/"
                             aria-label=": 免费福利"
                         >
                             <h3 class="media-heading">免费福利</h3>
@@ -896,17 +896,17 @@
                     <div class="media-left">
                         <a
                             class="link-unstyled"
-                            href="https://890spw.coding-pages.com/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                            href="https://www.chilo-hzl-cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
                             aria-label=": 如何搭建hexo博客"
                         >
-                            <img class="media-image" src="https://890spw.coding-pages.com/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/chatu2.jpg" width="90" height="90"/>
+                            <img class="media-image" src="https://www.chilo-hzl-cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/chatu2.jpg" width="90" height="90"/>
                         </a>
                     </div>
                     
                     <div class="media-body">
                         <a
                             class="link-unstyled"
-                            href="https://890spw.coding-pages.com/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                            href="https://www.chilo-hzl-cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
                             aria-label=": 如何搭建hexo博客"
                         >
                             <h3 class="media-heading">如何搭建hexo博客</h3>
@@ -929,7 +929,7 @@
                     <div class="media-body">
                         <a
                             class="link-unstyled"
-                            href="https://890spw.coding-pages.com/2020/02/26/test/"
+                            href="https://www.chilo-hzl-cn/2020/02/26/test/"
                             aria-label=": test"
                         >
                             <h3 class="media-heading">test</h3>
