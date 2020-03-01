@@ -13,7 +13,7 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"chilo-hzl","sameAs":["https://github.com/chilo-hzl","/contact"],"image":"gravatar.jpg"},"articleBody":"\n\n1. 注册一个coding账号，这个步骤比较简单，团队的名字随便填，后面是可以更改的\n*2. 你可以看一下coding的官方文档中的静态网页的配置 如何搭建hexo博客 *\n3. 在新建项目后，点击项目设置，点击功能开关，并将所有的开关打开（最主要的还是构建与部署，因为这样你才能才代码仓库中看到静态网页，否则你是配置不了的）\n4. 在自己电脑上配置coding的ssh验证，不会配置的请看给coding配置ssh公钥 ，如果之前给GitHub配置过ssh公钥的，我建议coding不要使用ssh公钥（会出错，当然了也有相应的解决方案，大家可以自行查阅），应使用https的验证方法将博客推送到coding仓库，第一次推送要输入账户名和密码，后面的话电脑上的凭据管理器会记住账号和密码，下次就不用输入了，如果之前没有给GitHub配置过公钥的，可以给coding配置公钥，但不是绝对的，也可用https的验证方法（我的GitHub用的是https的验证方法，coding用的是ssh）。\n4. 如果你的coding使用的是ssh验证方法，复制coding网站仓库的ssh，打开自己电脑上博客根目录的_config.yml文件，粘贴至repo：字段的后面（注意冒号后面要留有空格）\n5. 在你的algolia控制台indices菜单栏中新建一个索引，并改动_config.yml文件中的indexName:字段后面的值，改为你新建的索引名\n6. 在_config.yml文件中将URL更改为coding项目为你分配的URL\n7. 在博客的根目录打开git bash执行下面的代码\n1234hexo cleanhexo ghexo algoliahexo d\n\n恭喜你大功告成！\n","dateCreated":"2020-03-01T20:21:56+08:00","dateModified":"2020-03-01T22:27:04+08:00","datePublished":"2020-03-01T20:21:56+08:00","description":"之前将博客部署到GitHub上，但是访问速度太慢了，所以我又将博客托管到了coding，在这篇博客中我将告诉你如何将博客网站托管到coding上","headline":"将hexo部署到coding上","image":["chatu.jpg","chatu.jpg"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"},"publisher":{"@type":"Organization","name":"chilo-hzl","sameAs":["https://github.com/chilo-hzl","/contact"],"image":"gravatar.jpg","logo":{"@type":"ImageObject","url":"gravatar.jpg"}},"url":"https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/","keywords":"hexo","thumbnailUrl":"chatu.jpg"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"chilo-hzl","sameAs":["https://github.com/chilo-hzl","/contact"],"image":"gravatar.jpg"},"articleBody":"\n\n步骤如下1. 注册一个coding账号，这个步骤比较简单，团队的名字随便填，后面是可以更改的\n2. 你可以看一下coding的官方文档中的静态网页的配置 如何搭建hexo博客\n3. 在新建项目后，点击项目设置，点击功能开关，并将所有的开关打开（最主要的还是构建与部署，因为这样你才能才代码仓库中看到静态网页，否则你是配置不了的）\n4. 在自己电脑上配置coding的ssh验证，不会配置的请看给coding配置ssh公钥 ，如果之前给GitHub配置过ssh公钥的，我建议coding不要使用ssh公钥（会出错，当然了也有相应的解决方案，大家可以自行查阅），应使用https的验证方法将博客推送到coding仓库，第一次推送要输入账户名和密码，后面的话电脑上的凭据管理器会记住账号和密码，下次就不用输入了，如果之前没有给GitHub配置过公钥的，可以给coding配置公钥，但不是绝对的，也可用https的验证方法（我的GitHub用的是https的验证方法，coding用的是ssh）。\n5. 如果你的coding使用的是ssh验证方法，复制coding网站仓库的ssh，打开自己电脑上博客根目录的_config.yml文件，粘贴至repo：字段的后面（注意冒号后面要留有空格）\n6. 在你的algolia控制台indices菜单栏中新建一个索引，并改动_config.yml文件中的indexName:字段后面的值，改为你新建的索引名\n7. 在_config.yml文件中将URL更改为coding项目为你分配的URL\n8. 在博客的根目录打开git bash执行下面的代码\n1234hexo cleanhexo ghexo algoliahexo d\n\n恭喜你大功告成！\n\n\n如果你想使一个段落粗体显示，那么在这一段结尾处与句尾星号之间不能留空格（有序列表也是如此），否则会渲染错误\n","dateCreated":"2020-03-01T20:21:56+08:00","dateModified":"2020-03-01T23:26:52+08:00","datePublished":"2020-03-01T20:21:56+08:00","description":"之前将博客部署到GitHub上，但是访问速度太慢了，所以我又将博客托管到了coding，在这篇博客中我将告诉你如何将博客网站托管到coding上","headline":"将hexo部署到coding上","image":["chatu.jpg","chatu.jpg"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"},"publisher":{"@type":"Organization","name":"chilo-hzl","sameAs":["https://github.com/chilo-hzl","/contact"],"image":"gravatar.jpg","logo":{"@type":"ImageObject","url":"gravatar.jpg"}},"url":"https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/","keywords":"hexo","thumbnailUrl":"chatu.jpg"}</script>
     <meta name="description" content="之前将博客部署到GitHub上，但是访问速度太慢了，所以我又将博客托管到了coding，在这篇博客中我将告诉你如何将博客网站托管到coding上">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="将hexo部署到coding上">
@@ -22,7 +22,7 @@
 <meta property="og:description" content="之前将博客部署到GitHub上，但是访问速度太慢了，所以我又将博客托管到了coding，在这篇博客中我将告诉你如何将博客网站托管到coding上">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-03-01T12:21:56.000Z">
-<meta property="article:modified_time" content="2020-03-01T14:27:04.261Z">
+<meta property="article:modified_time" content="2020-03-01T15:26:52.533Z">
 <meta property="article:author" content="chilo-hzl">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
@@ -293,17 +293,20 @@
         <div class="main-content-wrap">
             <!--excerpt-->
 
-<p><strong>1. 注册一个coding账号，这个步骤比较简单，团队的名字随便填，后面是可以更改的</strong></p>
-<p>*<em>2. 你可以看一下coding的官方文档中的静态网页的配置 <a href="https://help.coding.net/docs/devops/cd/static-website.html#pageTitle" target="_blank" rel="noopener">如何搭建hexo博客</a> *</em></p>
+<h2 id="步骤如下"><a href="#步骤如下" class="headerlink" title="步骤如下"></a>步骤如下</h2><p><strong>1. 注册一个coding账号，这个步骤比较简单，团队的名字随便填，后面是可以更改的</strong></p>
+<p><strong>2. 你可以看一下coding的官方文档中的静态网页的配置 <a href="https://help.coding.net/docs/devops/cd/static-website.html#pageTitle" target="_blank" rel="noopener">如何搭建hexo博客</a></strong></p>
 <p><strong>3. 在新建项目后，点击项目设置，点击功能开关，并将所有的开关打开（最主要的还是构建与部署，因为这样你才能才代码仓库中看到静态网页，否则你是配置不了的）</strong></p>
 <p><strong>4. 在自己电脑上配置coding的ssh验证，不会配置的请看<a href="https://help.coding.net/docs/project/features/ssh.html#pageTitle" target="_blank" rel="noopener">给coding配置ssh公钥</a> ，如果之前给GitHub配置过ssh公钥的，我建议coding不要使用ssh公钥（会出错，当然了也有相应的解决方案，大家可以自行查阅），应使用https的验证方法将博客推送到coding仓库，第一次推送要输入账户名和密码，后面的话电脑上的凭据管理器会记住账号和密码，下次就不用输入了，如果之前没有给GitHub配置过公钥的，可以给coding配置公钥，但不是绝对的，也可用https的验证方法（我的GitHub用的是https的验证方法，coding用的是ssh）。</strong></p>
-<p><strong>4. 如果你的coding使用的是ssh验证方法，复制coding网站仓库的ssh，打开自己电脑上博客根目录的_config.yml文件，粘贴至<code>repo：</code>字段的后面（注意冒号后面要留有空格）</strong></p>
-<p><strong>5. 在你的algolia控制台indices菜单栏中新建一个索引，并改动_config.yml文件中的<code>indexName:</code>字段后面的值，改为你新建的索引名</strong></p>
-<p><strong>6. 在_config.yml文件中将URL更改为coding项目为你分配的URL</strong></p>
-<p><strong>7. 在博客的根目录打开git bash执行下面的代码</strong></p>
+<p><strong>5. 如果你的coding使用的是ssh验证方法，复制coding网站仓库的ssh，打开自己电脑上博客根目录的_config.yml文件，粘贴至<code>repo：</code>字段的后面（注意冒号后面要留有空格）</strong></p>
+<p><strong>6. 在你的algolia控制台indices菜单栏中新建一个索引，并改动_config.yml文件中的<code>indexName:</code>字段后面的值，改为你新建的索引名</strong></p>
+<p><strong>7. 在_config.yml文件中将URL更改为coding项目为你分配的URL</strong></p>
+<p><strong>8. 在博客的根目录打开git bash执行下面的代码</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo algolia</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 
-<div class="alert info"><p>恭喜你大功告成！</p>
+<div class="alert info"><p><strong>恭喜你大功告成！</strong></p>
+</div>
+
+<div class="alert danger"><p><strong>如果你想使一个段落粗体显示，那么在这一段结尾处与句尾星号之间不能留空格（有序列表也是如此），否则会渲染错误</strong></p>
 </div>
             
 
