@@ -13,11 +13,11 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"chilo-hzl","sameAs":["https://github.com/chilo-hzl","/contact"],"image":"gravatar.jpg"},"articleBody":"\n\n步骤如下1. 注册一个coding账号，这个步骤比较简单，团队的名字随便填，后面是可以更改的\n2. 你可以看一下coding的官方文档中的静态网页的配置 如何搭建hexo博客\n3. 在新建项目后，点击项目设置，点击功能开关，并将所有的开关打开（最主要的还是构建与部署，因为这样你才能才代码仓库中看到静态网页，否则你是配置不了的）\n4. 在自己电脑上配置coding的ssh验证，不会配置的请看给coding配置ssh公钥 ，如果之前给GitHub配置过ssh公钥的，我建议coding不要使用ssh公钥（会出错，当然了也有相应的解决方案，大家可以自行查阅），应使用https的验证方法将博客推送到coding仓库，第一次推送要输入账户名和密码，后面的话电脑上的凭据管理器会记住账号和密码，下次就不用输入了，如果之前没有给GitHub配置过公钥的，可以给coding配置公钥，但不是绝对的，也可用https的验证方法（我的GitHub用的是https的验证方法，coding用的是ssh）。\n5. 如果你的coding使用的是ssh验证方法，复制coding网站仓库的ssh，打开自己电脑上博客根目录的_config.yml文件，粘贴至repo：字段的后面（注意冒号后面要留有空格）\n6. 在你的algolia控制台indices菜单栏中新建一个索引，并改动_config.yml文件中的indexName:字段后面的值，改为你新建的索引名\n7. 在_config.yml文件中将URL更改为coding项目为你分配的URL\n8. 在博客的根目录打开git bash执行下面的代码\n1234hexo cleanhexo ghexo algoliahexo d\n\n恭喜你大功告成！\n\n\n如果你想使一个段落粗体显示，那么在这一段结尾处与句尾星号之间不能留空格（有序列表也是如此），否则会渲染错误\n","dateCreated":"2020-03-01T20:21:56+08:00","dateModified":"2020-03-01T23:26:52+08:00","datePublished":"2020-03-01T20:21:56+08:00","description":"之前将博客部署到GitHub上，但是访问速度太慢了，所以我又将博客托管到了coding，在这篇博客中我将告诉你如何将博客网站托管到coding上","headline":"将hexo部署到coding上","image":["chatu.jpg","chatu.jpg"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.chilo-hzl.cn/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"},"publisher":{"@type":"Organization","name":"chilo-hzl","sameAs":["https://github.com/chilo-hzl","/contact"],"image":"gravatar.jpg","logo":{"@type":"ImageObject","url":"gravatar.jpg"}},"url":"https://www.chilo-hzl.cn/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/","keywords":"hexo","thumbnailUrl":"chatu.jpg"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"chilo-hzl","sameAs":["https://github.com/chilo-hzl","/contact"],"image":"gravatar.jpg"},"articleBody":"\n\n步骤如下1. 注册一个coding账号，这个步骤比较简单，团队的名字随便填，后面是可以更改的\n2. 你可以看一下coding的官方文档中的静态网页的配置 如何搭建hexo博客\n3. 在新建项目后，点击项目设置，点击功能开关，并将所有的开关打开（最主要的还是构建与部署，因为这样你才能才代码仓库中看到静态网页，否则你是配置不了的）\n4. 在自己电脑上配置coding的ssh验证，不会配置的请看给coding配置ssh公钥 ，如果之前给GitHub配置过ssh公钥的，我建议coding不要使用ssh公钥（会出错，当然了也有相应的解决方案，大家可以自行查阅），应使用https的验证方法将博客推送到coding仓库，第一次推送要输入账户名和密码，后面的话电脑上的凭据管理器会记住账号和密码，下次就不用输入了，如果之前没有给GitHub配置过公钥的，可以给coding配置公钥，但不是绝对的，也可用https的验证方法（我的GitHub用的是https的验证方法，coding用的是ssh）。\n5. 如果你的coding使用的是ssh验证方法，复制coding网站仓库的ssh，打开自己电脑上博客根目录的_config.yml文件，粘贴至repo：字段的后面（注意冒号后面要留有空格）\n6. 在你的algolia控制台indices菜单栏中新建一个索引，并改动_config.yml文件中的indexName:字段后面的值，改为你新建的索引名\n7. 在_config.yml文件中将URL更改为coding项目为你分配的URL\n8. 在博客的根目录打开git bash执行下面的代码\n1234hexo cleanhexo ghexo algoliahexo d\n\n恭喜你大功告成！\n\n\n如果你想使一个段落粗体显示，那么在这一段结尾处与句尾星号之间不能留空格（有序列表也是如此），否则会渲染错误\n","dateCreated":"2020-03-01T20:21:56+08:00","dateModified":"2020-03-01T23:26:52+08:00","datePublished":"2020-03-01T20:21:56+08:00","description":"之前将博客部署到GitHub上，但是访问速度太慢了，所以我又将博客托管到了coding，在这篇博客中我将告诉你如何将博客网站托管到coding上","headline":"将hexo部署到coding上","image":["chatu.jpg","chatu.jpg"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"},"publisher":{"@type":"Organization","name":"chilo-hzl","sameAs":["https://github.com/chilo-hzl","/contact"],"image":"gravatar.jpg","logo":{"@type":"ImageObject","url":"gravatar.jpg"}},"url":"https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/","keywords":"hexo","thumbnailUrl":"chatu.jpg"}</script>
     <meta name="description" content="之前将博客部署到GitHub上，但是访问速度太慢了，所以我又将博客托管到了coding，在这篇博客中我将告诉你如何将博客网站托管到coding上">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="将hexo部署到coding上">
-<meta property="og:url" content="https://www.chilo-hzl.cn/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/index.html">
+<meta property="og:url" content="https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/index.html">
 <meta property="og:site_name" content="chilo-hzl&#39;s Blog">
 <meta property="og:description" content="之前将博客部署到GitHub上，但是访问速度太慢了，所以我又将博客托管到了coding，在这篇博客中我将告诉你如何将博客网站托管到coding上">
 <meta property="og:locale" content="en_US">
@@ -31,15 +31,15 @@
         
     
     
-        <meta property="og:image" content="https://www.chilo-hzl.cn/assets/images/gravatar.jpg"/>
+        <meta property="og:image" content="https://chilo-hzl.github.io/assets/images/gravatar.jpg"/>
     
     
-        <meta property="og:image" content="https://www.chilo-hzl.cn/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/chatu.jpg"/>
-        <meta class="swiftype" name="image" data-type="enum" content="https://www.chilo-hzl.cn/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/chatu.jpg"/>
+        <meta property="og:image" content="https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/chatu.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/chatu.jpg"/>
     
     
-        <meta property="og:image" content="https://www.chilo-hzl.cn/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/chatu.jpg"/>
-        <meta class="swiftype" name="image" data-type="enum" content="https://www.chilo-hzl.cn/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/chatu.jpg"/>
+        <meta property="og:image" content="https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/chatu.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/chatu.jpg"/>
     
     
     <!--STYLES-->
@@ -372,7 +372,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://www.chilo-hzl.cn/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
                     title="Share on Facebook"
                     aria-label="Share on Facebook"
                 >
@@ -385,7 +385,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://twitter.com/intent/tweet?text=https://www.chilo-hzl.cn/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
+                    target="new" href="https://twitter.com/intent/tweet?text=https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
                     title="Share on Twitter"
                     aria-label="Share on Twitter"
                 >
@@ -398,7 +398,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://plus.google.com/share?url=https://www.chilo-hzl.cn/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
+                    target="new" href="https://plus.google.com/share?url=https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
                     title="Share on Google+"
                     aria-label="Share on Google+"
                 >
@@ -411,7 +411,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="http://service.weibo.com/share/share.php?&amp;title=https://www.chilo-hzl.cn/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
+                    target="new" href="http://service.weibo.com/share/share.php?&amp;title=https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
                     title="Share on Weibo"
                     aria-label="Share on Weibo"
                 >
@@ -424,7 +424,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.chilo-hzl.cn/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/&amp;title=将hexo部署到coding上"
+                    target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/&amp;title=将hexo部署到coding上"
                     title="Share on QQ"
                     aria-label="Share on QQ"
                 >
@@ -437,7 +437,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.chilo-hzl.cn/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
+                    target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
                     title="Share on Qzone"
                     aria-label="Share on Qzone"
                 >
@@ -526,7 +526,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://www.chilo-hzl.cn/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
                     title="Share on Facebook"
                     aria-label="Share on Facebook"
                 >
@@ -539,7 +539,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://twitter.com/intent/tweet?text=https://www.chilo-hzl.cn/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
+                    target="new" href="https://twitter.com/intent/tweet?text=https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
                     title="Share on Twitter"
                     aria-label="Share on Twitter"
                 >
@@ -552,7 +552,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://plus.google.com/share?url=https://www.chilo-hzl.cn/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
+                    target="new" href="https://plus.google.com/share?url=https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
                     title="Share on Google+"
                     aria-label="Share on Google+"
                 >
@@ -565,7 +565,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="http://service.weibo.com/share/share.php?&amp;title=https://www.chilo-hzl.cn/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
+                    target="new" href="http://service.weibo.com/share/share.php?&amp;title=https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
                     title="Share on Weibo"
                     aria-label="Share on Weibo"
                 >
@@ -578,7 +578,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.chilo-hzl.cn/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/&amp;title=将hexo部署到coding上"
+                    target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/&amp;title=将hexo部署到coding上"
                     title="Share on QQ"
                     aria-label="Share on QQ"
                 >
@@ -591,7 +591,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.chilo-hzl.cn/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
+                    target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
                     title="Share on Qzone"
                     aria-label="Share on Qzone"
                 >
@@ -625,7 +625,7 @@
                     <a
                         class="share-option-btn"
                         target="new"
-                        href="https://www.facebook.com/sharer/sharer.php?u=https://www.chilo-hzl.cn/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
+                        href="https://www.facebook.com/sharer/sharer.php?u=https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
                         aria-label="Share on Facebook"
                     >
                         <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
@@ -638,7 +638,7 @@
                     <a
                         class="share-option-btn"
                         target="new"
-                        href="https://twitter.com/intent/tweet?text=https://www.chilo-hzl.cn/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
+                        href="https://twitter.com/intent/tweet?text=https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
                         aria-label="Share on Twitter"
                     >
                         <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
@@ -651,7 +651,7 @@
                     <a
                         class="share-option-btn"
                         target="new"
-                        href="https://plus.google.com/share?url=https://www.chilo-hzl.cn/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
+                        href="https://plus.google.com/share?url=https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
                         aria-label="Share on Google+"
                     >
                         <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
@@ -664,7 +664,7 @@
                     <a
                         class="share-option-btn"
                         target="new"
-                        href="http://service.weibo.com/share/share.php?&amp;title=https://www.chilo-hzl.cn/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
+                        href="http://service.weibo.com/share/share.php?&amp;title=https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
                         aria-label="Share on Weibo"
                     >
                         <i class="fab fa-weibo" aria-hidden="true"></i><span>Share on Weibo</span>
@@ -677,7 +677,7 @@
                     <a
                         class="share-option-btn"
                         target="new"
-                        href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.chilo-hzl.cn/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/&amp;title=将hexo部署到coding上"
+                        href="http://connect.qq.com/widget/shareqq/index.html?url=https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/&amp;title=将hexo部署到coding上"
                         aria-label="Share on QQ"
                     >
                         <i class="fab fa-qq" aria-hidden="true"></i><span>Share on QQ</span>
@@ -690,7 +690,7 @@
                     <a
                         class="share-option-btn"
                         target="new"
-                        href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.chilo-hzl.cn/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
+                        href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
                         aria-label="Share on Qzone"
                     >
                         <i class="fa fa-star" aria-hidden="true"></i><span>Share on Qzone</span>
@@ -766,17 +766,17 @@
                     <div class="media-left">
                         <a
                             class="link-unstyled"
-                            href="https://www.chilo-hzl.cn/2020/02/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"
+                            href="https://chilo-hzl.github.io/2020/02/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"
                             aria-label=": 我的第一篇博客"
                         >
-                            <img class="media-image" src="https://www.chilo-hzl.cn/2020/02/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/chatu.jpg" width="90" height="90"/>
+                            <img class="media-image" src="https://chilo-hzl.github.io/2020/02/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/chatu.jpg" width="90" height="90"/>
                         </a>
                     </div>
                     
                     <div class="media-body">
                         <a
                             class="link-unstyled"
-                            href="https://www.chilo-hzl.cn/2020/02/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"
+                            href="https://chilo-hzl.github.io/2020/02/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"
                             aria-label=": 我的第一篇博客"
                         >
                             <h3 class="media-heading">我的第一篇博客</h3>
@@ -800,17 +800,17 @@
                     <div class="media-left">
                         <a
                             class="link-unstyled"
-                            href="https://www.chilo-hzl.cn/2020/02/13/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B/"
+                            href="https://chilo-hzl.github.io/2020/02/13/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B/"
                             aria-label=": 个人简介"
                         >
-                            <img class="media-image" src="https://www.chilo-hzl.cn/2020/02/13/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B/chatu2.jpg" width="90" height="90"/>
+                            <img class="media-image" src="https://chilo-hzl.github.io/2020/02/13/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B/chatu2.jpg" width="90" height="90"/>
                         </a>
                     </div>
                     
                     <div class="media-body">
                         <a
                             class="link-unstyled"
-                            href="https://www.chilo-hzl.cn/2020/02/13/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B/"
+                            href="https://chilo-hzl.github.io/2020/02/13/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B/"
                             aria-label=": 个人简介"
                         >
                             <h3 class="media-heading">个人简介</h3>
@@ -833,17 +833,17 @@
                     <div class="media-left">
                         <a
                             class="link-unstyled"
-                            href="https://www.chilo-hzl.cn/2020/02/13/%E5%85%8D%E8%B4%B9%E7%A6%8F%E5%88%A9/"
+                            href="https://chilo-hzl.github.io/2020/02/13/%E5%85%8D%E8%B4%B9%E7%A6%8F%E5%88%A9/"
                             aria-label=": 免费福利"
                         >
-                            <img class="media-image" src="https://www.chilo-hzl.cn/2020/02/13/%E5%85%8D%E8%B4%B9%E7%A6%8F%E5%88%A9/image-1.jpg" width="90" height="90"/>
+                            <img class="media-image" src="https://chilo-hzl.github.io/2020/02/13/%E5%85%8D%E8%B4%B9%E7%A6%8F%E5%88%A9/image-1.jpg" width="90" height="90"/>
                         </a>
                     </div>
                     
                     <div class="media-body">
                         <a
                             class="link-unstyled"
-                            href="https://www.chilo-hzl.cn/2020/02/13/%E5%85%8D%E8%B4%B9%E7%A6%8F%E5%88%A9/"
+                            href="https://chilo-hzl.github.io/2020/02/13/%E5%85%8D%E8%B4%B9%E7%A6%8F%E5%88%A9/"
                             aria-label=": 免费福利"
                         >
                             <h3 class="media-heading">免费福利</h3>
@@ -866,17 +866,17 @@
                     <div class="media-left">
                         <a
                             class="link-unstyled"
-                            href="https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                            href="https://chilo-hzl.github.io/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
                             aria-label=": 如何搭建hexo博客"
                         >
-                            <img class="media-image" src="https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/chatu2.jpg" width="90" height="90"/>
+                            <img class="media-image" src="https://chilo-hzl.github.io/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/chatu2.jpg" width="90" height="90"/>
                         </a>
                     </div>
                     
                     <div class="media-body">
                         <a
                             class="link-unstyled"
-                            href="https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                            href="https://chilo-hzl.github.io/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
                             aria-label=": 如何搭建hexo博客"
                         >
                             <h3 class="media-heading">如何搭建hexo博客</h3>
@@ -899,17 +899,17 @@
                     <div class="media-left">
                         <a
                             class="link-unstyled"
-                            href="https://www.chilo-hzl.cn/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
+                            href="https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
                             aria-label=": 将hexo部署到coding上"
                         >
-                            <img class="media-image" src="https://www.chilo-hzl.cn/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/chatu.jpg" width="90" height="90"/>
+                            <img class="media-image" src="https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/chatu.jpg" width="90" height="90"/>
                         </a>
                     </div>
                     
                     <div class="media-body">
                         <a
                             class="link-unstyled"
-                            href="https://www.chilo-hzl.cn/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
+                            href="https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
                             aria-label=": 将hexo部署到coding上"
                         >
                             <h3 class="media-heading">将hexo部署到coding上</h3>
@@ -932,17 +932,17 @@
                     <div class="media-left">
                         <a
                             class="link-unstyled"
-                            href="https://www.chilo-hzl.cn/2020/03/08/%E5%A6%82%E4%BD%95%E7%94%A8JavaScript%E5%B0%86%E6%95%B0%E6%8D%AE%E6%B8%B2%E6%9F%93%E6%88%90%E8%A1%A8%E6%A0%BC/"
+                            href="https://chilo-hzl.github.io/2020/03/08/%E5%A6%82%E4%BD%95%E7%94%A8JavaScript%E5%B0%86%E6%95%B0%E6%8D%AE%E6%B8%B2%E6%9F%93%E6%88%90%E8%A1%A8%E6%A0%BC/"
                             aria-label=": 如何用JavaScript将数据渲染成表格"
                         >
-                            <img class="media-image" src="https://www.chilo-hzl.cn/2020/03/08/%E5%A6%82%E4%BD%95%E7%94%A8JavaScript%E5%B0%86%E6%95%B0%E6%8D%AE%E6%B8%B2%E6%9F%93%E6%88%90%E8%A1%A8%E6%A0%BC/image1.jpg" width="90" height="90"/>
+                            <img class="media-image" src="https://chilo-hzl.github.io/2020/03/08/%E5%A6%82%E4%BD%95%E7%94%A8JavaScript%E5%B0%86%E6%95%B0%E6%8D%AE%E6%B8%B2%E6%9F%93%E6%88%90%E8%A1%A8%E6%A0%BC/image1.jpg" width="90" height="90"/>
                         </a>
                     </div>
                     
                     <div class="media-body">
                         <a
                             class="link-unstyled"
-                            href="https://www.chilo-hzl.cn/2020/03/08/%E5%A6%82%E4%BD%95%E7%94%A8JavaScript%E5%B0%86%E6%95%B0%E6%8D%AE%E6%B8%B2%E6%9F%93%E6%88%90%E8%A1%A8%E6%A0%BC/"
+                            href="https://chilo-hzl.github.io/2020/03/08/%E5%A6%82%E4%BD%95%E7%94%A8JavaScript%E5%B0%86%E6%95%B0%E6%8D%AE%E6%B8%B2%E6%9F%93%E6%88%90%E8%A1%A8%E6%A0%BC/"
                             aria-label=": 如何用JavaScript将数据渲染成表格"
                         >
                             <h3 class="media-heading">如何用JavaScript将数据渲染成表格</h3>
@@ -965,17 +965,17 @@
                     <div class="media-left">
                         <a
                             class="link-unstyled"
-                            href="https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
+                            href="https://chilo-hzl.github.io/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                             aria-label=": 如何理解栈和队列"
                         >
-                            <img class="media-image" src="https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/index.jpg" width="90" height="90"/>
+                            <img class="media-image" src="https://chilo-hzl.github.io/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/index.jpg" width="90" height="90"/>
                         </a>
                     </div>
                     
                     <div class="media-body">
                         <a
                             class="link-unstyled"
-                            href="https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
+                            href="https://chilo-hzl.github.io/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                             aria-label=": 如何理解栈和队列"
                         >
                             <h3 class="media-heading">如何理解栈和队列</h3>
@@ -1028,7 +1028,7 @@
 
     <script>
       var algoliaClient = algoliasearch('S3WXNY7T32', '43f6971f5db2b229807327bfc0e7448d');
-      var algoliaIndex = algoliaClient.initIndex('myBlog_coding');
+      var algoliaIndex = algoliaClient.initIndex('myBlog');
     </script>
 
 

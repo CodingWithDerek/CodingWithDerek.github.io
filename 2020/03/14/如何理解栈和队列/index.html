@@ -13,11 +13,11 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"chilo-hzl","sameAs":["https://github.com/chilo-hzl","/contact"],"image":"gravatar.jpg"},"articleBody":"\n\n刚开始学习栈和队列的时候很疑惑，不是已经有链表和数组了吗，要栈和队列干嘛，刚开始的时候我就把他们理解错了。\n首先在你学习栈和队列的时候你应该熟悉链表和数组，链表和数组都是数据的不同存储方式，链表是用到存储空间的时候开辟，就是说你能动态调整它，但是数组是一开始就需要开辟好所需要的存储空间，不能动态调整，这就是链表和数组的区别\n你应该有这样的一个概念，链表和数组是数据的存储方式，而栈和队列是数据的组织方式，也可理解成是一种操作数据的方式，其实我们在学习程序语言（此时你还没有还没有学习栈和队列）的时候已经在用栈和队列了，只不过你的脑海里没有这个概念罢了，让我们以下面的代码说明\n12345678910111213141516include&lt;iostream&gt;using namespace std;int main()&#123;\tint arr[10],i;    cout&lt;&lt;\"请输入十个数：\"&lt;&lt;endl;    for(i=0;i&lt;10;i++)        cin&gt;&gt;arr[i];    cout&lt;&lt;endl;    for(i=0;i&lt;10;i++)        cout&lt;&lt;arr[i]&lt;&lt;\" \";    cout&lt;&lt;endl;    for(i=9;i&gt;=0;i--)        cout&lt;&lt;arr[i]&lt;&lt;\" \";    cout&lt;&lt;endl;    return 0;&#125;\n\n在上面的代码中，我以c++写的给一个数组赋值，然后输出该数组的值为例，在该例中，我们从下标为零的位置给数组赋值，输出数据我们使用两种方式，一种是从下标为0的位置开始输出，一种是从下标为9的位置开始输出。我们从下标为0的地方给数组赋值，从下标为0的地方输出数组存储的元素，这样操纵数据的方式其实就是队列，因为队列是先进先出表，我们从左到右存储数据，又从左到右提取元素，只不过我们并没有将操作数据的方式用函数封装起来；我们从下标为0的地方给数组赋值，从下标为9的地方输出数组存储的元素，这样操纵数据的方式其实就是栈，我们仔细想想，栈是先进后出表，我们从左到右赋值，从右到左输出，这不就是栈吗，在该例中我们并没有将它用函数封装起来。\n当然你也可以用链表存储该例中的十个数，原理都是一样的，只不过在链表中，我们并不是用下标标识元素的存储位置，而是用指针标识元素的位置，但你应当注意的是，在谭浩强的c++程序设计一书中，他将元素的存储地址称为指针，但是在李春葆编写的数据结构教程（第五版）中，他在讲述栈和队列的时候，以数组作为存储结构的时候，他将下标也称为指针，但重点是你要理解他们(无论是存储地址还是数组下标)都是起到一个标识元素存储位置的作用，这两位作者给指针的定义不一样，你不必纠结于此，正如一千个读者中有一千个哈利波特，一千个作者也可以给同一个词下一千个定义。\n你还可以这样理解，数组和链表就是一本书，把栈和队列类比成怎么样读这本书，你可以这样形容，你坐着读书是栈，躺着读书是队列。\n是否需要将操作数据的方式用函数封装起来，这跟你实际开发的程序有关，相信通过上面的讲解，大家肯定理解了栈和队列吧。","dateCreated":"2020-03-14T17:35:50+08:00","dateModified":"2020-03-14T18:47:04+08:00","datePublished":"2020-03-14T17:35:50+08:00","description":"对于不太理解栈和队列的小伙伴可以看一下这篇博客","headline":"如何理解栈和队列","image":["index.jpg","cover.jpg"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"},"publisher":{"@type":"Organization","name":"chilo-hzl","sameAs":["https://github.com/chilo-hzl","/contact"],"image":"gravatar.jpg","logo":{"@type":"ImageObject","url":"gravatar.jpg"}},"url":"https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/","keywords":"栈和队列","thumbnailUrl":"index.jpg"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"chilo-hzl","sameAs":["https://github.com/chilo-hzl","/contact"],"image":"gravatar.jpg"},"articleBody":"\n\n刚开始学习栈和队列的时候很疑惑，不是已经有链表和数组了吗，要栈和队列干嘛，刚开始的时候我就把他们理解错了。\n首先在你学习栈和队列的时候你应该熟悉链表和数组，链表和数组都是数据的不同存储方式，链表是用到存储空间的时候开辟，就是说你能动态调整它，但是数组是一开始就需要开辟好所需要的存储空间，不能动态调整，这就是链表和数组的区别\n你应该有这样的一个概念，链表和数组是数据的存储方式，而栈和队列是数据的组织方式，也可理解成是一种操作数据的方式，其实我们在学习程序语言（此时你还没有还没有学习栈和队列）的时候已经在用栈和队列了，只不过你的脑海里没有这个概念罢了，让我们以下面的代码说明\n12345678910111213141516include&lt;iostream&gt;using namespace std;int main()&#123;\tint arr[10],i;    cout&lt;&lt;\"请输入十个数：\"&lt;&lt;endl;    for(i=0;i&lt;10;i++)        cin&gt;&gt;arr[i];    cout&lt;&lt;endl;    for(i=0;i&lt;10;i++)        cout&lt;&lt;arr[i]&lt;&lt;\" \";    cout&lt;&lt;endl;    for(i=9;i&gt;=0;i--)        cout&lt;&lt;arr[i]&lt;&lt;\" \";    cout&lt;&lt;endl;    return 0;&#125;\n\n在上面的代码中，我以c++写的给一个数组赋值，然后输出该数组的值为例，在该例中，我们从下标为零的位置给数组赋值，输出数据我们使用两种方式，一种是从下标为0的位置开始输出，一种是从下标为9的位置开始输出。我们从下标为0的地方给数组赋值，从下标为0的地方输出数组存储的元素，这样操纵数据的方式其实就是队列，因为队列是先进先出表，我们从左到右存储数据，又从左到右提取元素，只不过我们并没有将操作数据的方式用函数封装起来；我们从下标为0的地方给数组赋值，从下标为9的地方输出数组存储的元素，这样操纵数据的方式其实就是栈，我们仔细想想，栈是先进后出表，我们从左到右赋值，从右到左输出，这不就是栈吗，在该例中我们并没有将它用函数封装起来。\n当然你也可以用链表存储该例中的十个数，原理都是一样的，只不过在链表中，我们并不是用下标标识元素的存储位置，而是用指针标识元素的位置，但你应当注意的是，在谭浩强的c++程序设计一书中，他将元素的存储地址称为指针，但是在李春葆编写的数据结构教程（第五版）中，他在讲述栈和队列的时候，以数组作为存储结构的时候，他将下标也称为指针，但重点是你要理解他们(无论是存储地址还是数组下标)都是起到一个标识元素存储位置的作用，这两位作者给指针的定义不一样，你不必纠结于此，正如一千个读者中有一千个哈利波特，一千个作者也可以给同一个词下一千个定义。\n你还可以这样理解，数组和链表就是一本书，把栈和队列类比成怎么样读这本书，你可以这样形容，你坐着读书是栈，躺着读书是队列。\n是否需要将操作数据的方式用函数封装起来，这跟你实际开发的程序有关，相信通过上面的讲解，大家肯定理解了栈和队列吧。","dateCreated":"2020-03-14T17:35:50+08:00","dateModified":"2020-03-14T18:47:04+08:00","datePublished":"2020-03-14T17:35:50+08:00","description":"对于不太理解栈和队列的小伙伴可以看一下这篇博客","headline":"如何理解栈和队列","image":["index.jpg","cover.jpg"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://chilo-hzl.github.io/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"},"publisher":{"@type":"Organization","name":"chilo-hzl","sameAs":["https://github.com/chilo-hzl","/contact"],"image":"gravatar.jpg","logo":{"@type":"ImageObject","url":"gravatar.jpg"}},"url":"https://chilo-hzl.github.io/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/","keywords":"栈和队列","thumbnailUrl":"index.jpg"}</script>
     <meta name="description" content="对于不太理解栈和队列的小伙伴可以看一下这篇博客">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="如何理解栈和队列">
-<meta property="og:url" content="https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/index.html">
+<meta property="og:url" content="https://chilo-hzl.github.io/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/index.html">
 <meta property="og:site_name" content="chilo-hzl&#39;s Blog">
 <meta property="og:description" content="对于不太理解栈和队列的小伙伴可以看一下这篇博客">
 <meta property="og:locale" content="en_US">
@@ -31,15 +31,15 @@
         
     
     
-        <meta property="og:image" content="https://www.chilo-hzl.cn/assets/images/gravatar.jpg"/>
+        <meta property="og:image" content="https://chilo-hzl.github.io/assets/images/gravatar.jpg"/>
     
     
-        <meta property="og:image" content="https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/index.jpg"/>
-        <meta class="swiftype" name="image" data-type="enum" content="https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/index.jpg"/>
+        <meta property="og:image" content="https://chilo-hzl.github.io/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/index.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="https://chilo-hzl.github.io/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/index.jpg"/>
     
     
-        <meta property="og:image" content="https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/cover.jpg"/>
-        <meta class="swiftype" name="image" data-type="enum" content="https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/cover.jpg"/>
+        <meta property="og:image" content="https://chilo-hzl.github.io/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/cover.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="https://chilo-hzl.github.io/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/cover.jpg"/>
     
     
     <!--STYLES-->
@@ -363,7 +363,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://chilo-hzl.github.io/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                     title="Share on Facebook"
                     aria-label="Share on Facebook"
                 >
@@ -376,7 +376,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://twitter.com/intent/tweet?text=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
+                    target="new" href="https://twitter.com/intent/tweet?text=https://chilo-hzl.github.io/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                     title="Share on Twitter"
                     aria-label="Share on Twitter"
                 >
@@ -389,7 +389,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://plus.google.com/share?url=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
+                    target="new" href="https://plus.google.com/share?url=https://chilo-hzl.github.io/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                     title="Share on Google+"
                     aria-label="Share on Google+"
                 >
@@ -402,7 +402,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="http://service.weibo.com/share/share.php?&amp;title=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
+                    target="new" href="http://service.weibo.com/share/share.php?&amp;title=https://chilo-hzl.github.io/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                     title="Share on Weibo"
                     aria-label="Share on Weibo"
                 >
@@ -415,7 +415,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/&amp;title=如何理解栈和队列"
+                    target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=https://chilo-hzl.github.io/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/&amp;title=如何理解栈和队列"
                     title="Share on QQ"
                     aria-label="Share on QQ"
                 >
@@ -428,7 +428,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
+                    target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://chilo-hzl.github.io/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                     title="Share on Qzone"
                     aria-label="Share on Qzone"
                 >
@@ -514,7 +514,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://chilo-hzl.github.io/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                     title="Share on Facebook"
                     aria-label="Share on Facebook"
                 >
@@ -527,7 +527,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://twitter.com/intent/tweet?text=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
+                    target="new" href="https://twitter.com/intent/tweet?text=https://chilo-hzl.github.io/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                     title="Share on Twitter"
                     aria-label="Share on Twitter"
                 >
@@ -540,7 +540,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://plus.google.com/share?url=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
+                    target="new" href="https://plus.google.com/share?url=https://chilo-hzl.github.io/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                     title="Share on Google+"
                     aria-label="Share on Google+"
                 >
@@ -553,7 +553,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="http://service.weibo.com/share/share.php?&amp;title=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
+                    target="new" href="http://service.weibo.com/share/share.php?&amp;title=https://chilo-hzl.github.io/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                     title="Share on Weibo"
                     aria-label="Share on Weibo"
                 >
@@ -566,7 +566,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/&amp;title=如何理解栈和队列"
+                    target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=https://chilo-hzl.github.io/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/&amp;title=如何理解栈和队列"
                     title="Share on QQ"
                     aria-label="Share on QQ"
                 >
@@ -579,7 +579,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
+                    target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://chilo-hzl.github.io/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                     title="Share on Qzone"
                     aria-label="Share on Qzone"
                 >
@@ -613,7 +613,7 @@
                     <a
                         class="share-option-btn"
                         target="new"
-                        href="https://www.facebook.com/sharer/sharer.php?u=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
+                        href="https://www.facebook.com/sharer/sharer.php?u=https://chilo-hzl.github.io/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                         aria-label="Share on Facebook"
                     >
                         <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
@@ -626,7 +626,7 @@
                     <a
                         class="share-option-btn"
                         target="new"
-                        href="https://twitter.com/intent/tweet?text=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
+                        href="https://twitter.com/intent/tweet?text=https://chilo-hzl.github.io/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                         aria-label="Share on Twitter"
                     >
                         <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
@@ -639,7 +639,7 @@
                     <a
                         class="share-option-btn"
                         target="new"
-                        href="https://plus.google.com/share?url=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
+                        href="https://plus.google.com/share?url=https://chilo-hzl.github.io/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                         aria-label="Share on Google+"
                     >
                         <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
@@ -652,7 +652,7 @@
                     <a
                         class="share-option-btn"
                         target="new"
-                        href="http://service.weibo.com/share/share.php?&amp;title=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
+                        href="http://service.weibo.com/share/share.php?&amp;title=https://chilo-hzl.github.io/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                         aria-label="Share on Weibo"
                     >
                         <i class="fab fa-weibo" aria-hidden="true"></i><span>Share on Weibo</span>
@@ -665,7 +665,7 @@
                     <a
                         class="share-option-btn"
                         target="new"
-                        href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/&amp;title=如何理解栈和队列"
+                        href="http://connect.qq.com/widget/shareqq/index.html?url=https://chilo-hzl.github.io/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/&amp;title=如何理解栈和队列"
                         aria-label="Share on QQ"
                     >
                         <i class="fab fa-qq" aria-hidden="true"></i><span>Share on QQ</span>
@@ -678,7 +678,7 @@
                     <a
                         class="share-option-btn"
                         target="new"
-                        href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
+                        href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://chilo-hzl.github.io/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                         aria-label="Share on Qzone"
                     >
                         <i class="fa fa-star" aria-hidden="true"></i><span>Share on Qzone</span>
@@ -754,17 +754,17 @@
                     <div class="media-left">
                         <a
                             class="link-unstyled"
-                            href="https://www.chilo-hzl.cn/2020/02/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"
+                            href="https://chilo-hzl.github.io/2020/02/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"
                             aria-label=": 我的第一篇博客"
                         >
-                            <img class="media-image" src="https://www.chilo-hzl.cn/2020/02/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/chatu.jpg" width="90" height="90"/>
+                            <img class="media-image" src="https://chilo-hzl.github.io/2020/02/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/chatu.jpg" width="90" height="90"/>
                         </a>
                     </div>
                     
                     <div class="media-body">
                         <a
                             class="link-unstyled"
-                            href="https://www.chilo-hzl.cn/2020/02/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"
+                            href="https://chilo-hzl.github.io/2020/02/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"
                             aria-label=": 我的第一篇博客"
                         >
                             <h3 class="media-heading">我的第一篇博客</h3>
@@ -788,17 +788,17 @@
                     <div class="media-left">
                         <a
                             class="link-unstyled"
-                            href="https://www.chilo-hzl.cn/2020/02/13/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B/"
+                            href="https://chilo-hzl.github.io/2020/02/13/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B/"
                             aria-label=": 个人简介"
                         >
-                            <img class="media-image" src="https://www.chilo-hzl.cn/2020/02/13/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B/chatu2.jpg" width="90" height="90"/>
+                            <img class="media-image" src="https://chilo-hzl.github.io/2020/02/13/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B/chatu2.jpg" width="90" height="90"/>
                         </a>
                     </div>
                     
                     <div class="media-body">
                         <a
                             class="link-unstyled"
-                            href="https://www.chilo-hzl.cn/2020/02/13/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B/"
+                            href="https://chilo-hzl.github.io/2020/02/13/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B/"
                             aria-label=": 个人简介"
                         >
                             <h3 class="media-heading">个人简介</h3>
@@ -821,17 +821,17 @@
                     <div class="media-left">
                         <a
                             class="link-unstyled"
-                            href="https://www.chilo-hzl.cn/2020/02/13/%E5%85%8D%E8%B4%B9%E7%A6%8F%E5%88%A9/"
+                            href="https://chilo-hzl.github.io/2020/02/13/%E5%85%8D%E8%B4%B9%E7%A6%8F%E5%88%A9/"
                             aria-label=": 免费福利"
                         >
-                            <img class="media-image" src="https://www.chilo-hzl.cn/2020/02/13/%E5%85%8D%E8%B4%B9%E7%A6%8F%E5%88%A9/image-1.jpg" width="90" height="90"/>
+                            <img class="media-image" src="https://chilo-hzl.github.io/2020/02/13/%E5%85%8D%E8%B4%B9%E7%A6%8F%E5%88%A9/image-1.jpg" width="90" height="90"/>
                         </a>
                     </div>
                     
                     <div class="media-body">
                         <a
                             class="link-unstyled"
-                            href="https://www.chilo-hzl.cn/2020/02/13/%E5%85%8D%E8%B4%B9%E7%A6%8F%E5%88%A9/"
+                            href="https://chilo-hzl.github.io/2020/02/13/%E5%85%8D%E8%B4%B9%E7%A6%8F%E5%88%A9/"
                             aria-label=": 免费福利"
                         >
                             <h3 class="media-heading">免费福利</h3>
@@ -854,17 +854,17 @@
                     <div class="media-left">
                         <a
                             class="link-unstyled"
-                            href="https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                            href="https://chilo-hzl.github.io/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
                             aria-label=": 如何搭建hexo博客"
                         >
-                            <img class="media-image" src="https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/chatu2.jpg" width="90" height="90"/>
+                            <img class="media-image" src="https://chilo-hzl.github.io/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/chatu2.jpg" width="90" height="90"/>
                         </a>
                     </div>
                     
                     <div class="media-body">
                         <a
                             class="link-unstyled"
-                            href="https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                            href="https://chilo-hzl.github.io/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
                             aria-label=": 如何搭建hexo博客"
                         >
                             <h3 class="media-heading">如何搭建hexo博客</h3>
@@ -887,17 +887,17 @@
                     <div class="media-left">
                         <a
                             class="link-unstyled"
-                            href="https://www.chilo-hzl.cn/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
+                            href="https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
                             aria-label=": 将hexo部署到coding上"
                         >
-                            <img class="media-image" src="https://www.chilo-hzl.cn/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/chatu.jpg" width="90" height="90"/>
+                            <img class="media-image" src="https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/chatu.jpg" width="90" height="90"/>
                         </a>
                     </div>
                     
                     <div class="media-body">
                         <a
                             class="link-unstyled"
-                            href="https://www.chilo-hzl.cn/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
+                            href="https://chilo-hzl.github.io/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
                             aria-label=": 将hexo部署到coding上"
                         >
                             <h3 class="media-heading">将hexo部署到coding上</h3>
@@ -920,17 +920,17 @@
                     <div class="media-left">
                         <a
                             class="link-unstyled"
-                            href="https://www.chilo-hzl.cn/2020/03/08/%E5%A6%82%E4%BD%95%E7%94%A8JavaScript%E5%B0%86%E6%95%B0%E6%8D%AE%E6%B8%B2%E6%9F%93%E6%88%90%E8%A1%A8%E6%A0%BC/"
+                            href="https://chilo-hzl.github.io/2020/03/08/%E5%A6%82%E4%BD%95%E7%94%A8JavaScript%E5%B0%86%E6%95%B0%E6%8D%AE%E6%B8%B2%E6%9F%93%E6%88%90%E8%A1%A8%E6%A0%BC/"
                             aria-label=": 如何用JavaScript将数据渲染成表格"
                         >
-                            <img class="media-image" src="https://www.chilo-hzl.cn/2020/03/08/%E5%A6%82%E4%BD%95%E7%94%A8JavaScript%E5%B0%86%E6%95%B0%E6%8D%AE%E6%B8%B2%E6%9F%93%E6%88%90%E8%A1%A8%E6%A0%BC/image1.jpg" width="90" height="90"/>
+                            <img class="media-image" src="https://chilo-hzl.github.io/2020/03/08/%E5%A6%82%E4%BD%95%E7%94%A8JavaScript%E5%B0%86%E6%95%B0%E6%8D%AE%E6%B8%B2%E6%9F%93%E6%88%90%E8%A1%A8%E6%A0%BC/image1.jpg" width="90" height="90"/>
                         </a>
                     </div>
                     
                     <div class="media-body">
                         <a
                             class="link-unstyled"
-                            href="https://www.chilo-hzl.cn/2020/03/08/%E5%A6%82%E4%BD%95%E7%94%A8JavaScript%E5%B0%86%E6%95%B0%E6%8D%AE%E6%B8%B2%E6%9F%93%E6%88%90%E8%A1%A8%E6%A0%BC/"
+                            href="https://chilo-hzl.github.io/2020/03/08/%E5%A6%82%E4%BD%95%E7%94%A8JavaScript%E5%B0%86%E6%95%B0%E6%8D%AE%E6%B8%B2%E6%9F%93%E6%88%90%E8%A1%A8%E6%A0%BC/"
                             aria-label=": 如何用JavaScript将数据渲染成表格"
                         >
                             <h3 class="media-heading">如何用JavaScript将数据渲染成表格</h3>
@@ -953,17 +953,17 @@
                     <div class="media-left">
                         <a
                             class="link-unstyled"
-                            href="https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
+                            href="https://chilo-hzl.github.io/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                             aria-label=": 如何理解栈和队列"
                         >
-                            <img class="media-image" src="https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/index.jpg" width="90" height="90"/>
+                            <img class="media-image" src="https://chilo-hzl.github.io/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/index.jpg" width="90" height="90"/>
                         </a>
                     </div>
                     
                     <div class="media-body">
                         <a
                             class="link-unstyled"
-                            href="https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
+                            href="https://chilo-hzl.github.io/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                             aria-label=": 如何理解栈和队列"
                         >
                             <h3 class="media-heading">如何理解栈和队列</h3>
@@ -1016,7 +1016,7 @@
 
     <script>
       var algoliaClient = algoliasearch('S3WXNY7T32', '43f6971f5db2b229807327bfc0e7448d');
-      var algoliaIndex = algoliaClient.initIndex('myBlog_coding');
+      var algoliaIndex = algoliaClient.initIndex('myBlog');
     </script>
 
 
