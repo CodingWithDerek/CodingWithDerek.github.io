@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.chilo-hzl.cn/"/>
-  <updated>2020-03-08T10:08:40.700Z</updated>
+  <updated>2020-03-14T10:47:04.315Z</updated>
   <id>https://www.chilo-hzl.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何理解栈和队列</title>
+    <link href="https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"/>
+    <id>https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/</id>
+    <published>2020-03-14T09:35:50.000Z</published>
+    <updated>2020-03-14T10:47:04.315Z</updated>
+    
+    <content type="html"><![CDATA[<!--excerpt--><p><strong>刚开始学习栈和队列的时候很疑惑，不是已经有链表和数组了吗，要栈和队列干嘛，刚开始的时候我就把他们理解错了。</strong></p><p><strong>首先在你学习栈和队列的时候你应该熟悉链表和数组，链表和数组都是数据的不同存储方式，链表是用到存储空间的时候开辟，就是说你能动态调整它，但是数组是一开始就需要开辟好所需要的存储空间，不能动态调整，这就是链表和数组的区别</strong></p><p><strong>你应该有这样的一个概念，链表和数组是数据的存储方式，而栈和队列是数据的组织方式，也可理解成是一种操作数据的方式，其实我们在学习程序语言（此时你还没有还没有学习栈和队列）的时候已经在用栈和队列了，只不过你的脑海里没有这个概念罢了，让我们以下面的代码说明</strong></p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">include&lt;iostream&gt;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="keyword">int</span> arr[<span class="number">10</span>],i;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"请输入十个数："</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;arr[i];</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;arr[i]&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">9</span>;i&gt;=<span class="number">0</span>;i--)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;arr[i]&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>在上面的代码中，我以c++写的给一个数组赋值，然后输出该数组的值为例，在该例中，我们从下标为零的位置给数组赋值，输出数据我们使用两种方式，一种是从下标为0的位置开始输出，一种是从下标为9的位置开始输出。我们从下标为0的地方给数组赋值，从下标为0的地方输出数组存储的元素，这样操纵数据的方式其实就是队列，因为队列是先进先出表，我们从左到右存储数据，又从左到右提取元素，只不过我们并没有将操作数据的方式用函数封装起来；我们从下标为0的地方给数组赋值，从下标为9的地方输出数组存储的元素，这样操纵数据的方式其实就是栈，我们仔细想想，栈是先进后出表，我们从左到右赋值，从右到左输出，这不就是栈吗，在该例中我们并没有将它用函数封装起来。</strong></p><p><strong>当然你也可以用链表存储该例中的十个数，原理都是一样的，只不过在链表中，我们并不是用下标标识元素的存储位置，而是用指针标识元素的位置，但你应当注意的是，在谭浩强的c++程序设计一书中，他将元素的存储地址称为指针，但是在李春葆编写的数据结构教程（第五版）中，他在讲述栈和队列的时候，以数组作为存储结构的时候，他将下标也称为指针，但重点是你要理解他们(无论是存储地址还是数组下标)都是起到一个标识元素存储位置的作用，这两位作者给指针的定义不一样，你不必纠结于此，正如一千个读者中有一千个哈利波特，一千个作者也可以给同一个词下一千个定义。</strong></p><p><strong>你还可以这样理解，数组和链表就是一本书，把栈和队列类比成怎么样读这本书，你可以这样形容，你坐着读书是栈，躺着读书是队列。</strong></p><p><strong>是否需要将操作数据的方式用函数封装起来，这跟你实际开发的程序有关，相信通过上面的讲解，大家肯定理解了栈和队列吧。</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;对于不太理解栈和队列的小伙伴可以看一下这篇博客&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="technology" scheme="https://www.chilo-hzl.cn/categories/technology/"/>
+    
+      <category term="数据结构" scheme="https://www.chilo-hzl.cn/categories/technology/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="栈和队列" scheme="https://www.chilo-hzl.cn/tags/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"/>
+    
+  </entry>
   
   <entry>
     <title>如何用JavaScript将数据渲染成表格</title>
@@ -119,9 +144,9 @@
     <link href="https://www.chilo-hzl.cn/2020/02/13/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B/"/>
     <id>https://www.chilo-hzl.cn/2020/02/13/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B/</id>
     <published>2020-02-13T14:49:09.000Z</published>
-    <updated>2020-02-14T10:59:20.418Z</updated>
+    <updated>2020-03-14T09:33:45.085Z</updated>
     
-    <content type="html"><![CDATA[<!--excerpt--><h2 id="偶像"><a href="#偶像" class="headerlink" title="偶像"></a>偶像</h2><ol><li><p><strong>Bill Gates</strong></p></li><li><p><strong>李彦宏</strong></p></li><li><p><strong>孙正义</strong></p></li></ol><hr><h2 id="爱好"><a href="#爱好" class="headerlink" title="爱好"></a>爱好</h2><h3 id="sport"><a href="#sport" class="headerlink" title="sport"></a>sport</h3><ol><li><strong>打篮球</strong></li><li><strong>打乒乓球</strong></li><li><strong>打羽毛球</strong></li></ol><h3 id="etc"><a href="#etc" class="headerlink" title="etc"></a>etc</h3><ul><li><strong>听音乐</strong></li><li><strong>看电影</strong></li><li><strong>吃美食</strong></li><li><strong>学英语</strong></li></ul><hr><h2 id="喜欢的人"><a href="#喜欢的人" class="headerlink" title="喜欢的人"></a>喜欢的人</h2><ol><li><strong>江疏影</strong></li><li><strong>刘雯</strong></li><li><strong>杨磊</strong></li></ol><hr><h2 id="喜欢的话"><a href="#喜欢的话" class="headerlink" title="喜欢的话"></a>喜欢的话</h2><ul><li><strong>You’re like a battery,charging in university,discharging at work.</strong></li><li><strong>当你停下来休息的时候不要忘记别人还在奔跑。</strong></li><li><strong>失败并不可怕，害怕失败才真正可怕。</strong></li></ul><hr><h2 id="character"><a href="#character" class="headerlink" title="character"></a>character</h2><ul><li><strong>rational</strong></li><li><strong>perceptual</strong></li><li><strong>serious(work)</strong></li><li><strong>funny(life)</strong></li></ul>]]></content>
+    <content type="html"><![CDATA[<!--excerpt--><h2 id="偶像"><a href="#偶像" class="headerlink" title="偶像"></a>偶像</h2><ol><li><strong>Bill Gates</strong></li><li><strong>李彦宏</strong></li><li><strong>孙正义</strong></li><li><strong>马云</strong></li></ol><hr><h2 id="爱好"><a href="#爱好" class="headerlink" title="爱好"></a>爱好</h2><h3 id="sport"><a href="#sport" class="headerlink" title="sport"></a>sport</h3><ol><li><strong>打篮球</strong></li><li><strong>打乒乓球</strong></li><li><strong>打羽毛球</strong></li></ol><h3 id="etc"><a href="#etc" class="headerlink" title="etc"></a>etc</h3><ul><li><strong>听音乐</strong></li><li><strong>看电影</strong></li><li><strong>吃美食</strong></li><li><strong>学英语</strong></li></ul><hr><h2 id="喜欢的人"><a href="#喜欢的人" class="headerlink" title="喜欢的人"></a>喜欢的人</h2><ol><li><strong>江疏影</strong></li><li><strong>刘雯</strong></li><li><strong>杨磊</strong></li></ol><hr><h2 id="喜欢的话"><a href="#喜欢的话" class="headerlink" title="喜欢的话"></a>喜欢的话</h2><ul><li><strong>You’re like a battery,charging in university,discharging at work.</strong></li><li><strong>当你停下来休息的时候不要忘记别人还在奔跑。</strong></li><li><strong>失败并不可怕，害怕失败才真正可怕。</strong></li></ul><hr><h2 id="character"><a href="#character" class="headerlink" title="character"></a>character</h2><ul><li><strong>rational</strong></li><li><strong>perceptual</strong></li><li><strong>serious(work)</strong></li><li><strong>funny(life)</strong></li></ul>]]></content>
     
     <summary type="html">
     

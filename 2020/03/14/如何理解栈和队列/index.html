@@ -6,29 +6,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="chilo-hzl&#39;s Blog">
-    <title>如何搭建hexo博客 - chilo-hzl&#39;s Blog</title>
+    <title>如何理解栈和队列 - chilo-hzl&#39;s Blog</title>
     <meta name="author" content="chilo-hzl">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"chilo-hzl","sameAs":["https://github.com/chilo-hzl","/contact"],"image":"gravatar.jpg"},"articleBody":"\n\n\n\n首先在搭建之前，你应该具备以下知识1.熟悉web前端技术（HTML,CSS,Javascript）\n2.有Github账号，熟悉Github上面的操作\n3.熟悉Git, 电脑上安装Git\n4.有Node.js基础知识，电脑上安装Node.js,因为Hexo博客框架是基于Node.js写的\n5.有安装npm软件包的相关知识\n6.熟悉Hexo开发文档\n如果你不熟悉上面内容，我建议你先学习上面内容，这样在搭建过程中如果遇到问题你可以通过控制台打印的信息快速找到自己在哪出错，并且下载模板后你完全可以根据自己的需求定制页面内容，做技术一定要知道所以然，而不是简单的copy\n\n\nGit是分布式版本控制系统，Github是代码托管平台，下面超链接比较优质的内容，你可以查看1.这篇博文告诉你怎样注册Github账号，一些基本的Github操作，如何下载Git，如何初步使用Git：网页链接\n2.这个是Git操作的视频讲解，这个老师讲的很好，他后面课程中的Eclipse部分大家可以不用听，因为暂时用不到：视频地址链接\n3.这个是廖雪峰老师的Git讲解，你可以看一下：网址链接\n4.这篇文章讲述了Github的详细安装过程以及配置：网址链接\n在这个过程中你可能会遇到一些专业术语，如果你查资料可以解决就ok,如果你查了好多资料还是一头雾水的话，你可以先放下，后续实践中你会慢慢理解的，还有大家不要怕出错，大不了从头再来，千万不要害怕。当然上述链接可能并不能满足你的需求，没关系，你要多百度。\n\n\nWeb前端技术1.这个平台虽然比较老，但内容真的很优质，包括HTML，CSS，JavaScript以及其他的一些Web技术，上面每个都有实例，强烈推荐：网址链接\n2.这个视频使我首次接触到的Web前端技术，也是因为看来这个视频，我觉得Web前端技术很酷，很好玩，上面孙俏老师讲的很好：网址链接\n\n\nNPM1.初学者主要使用npm install命令安装依赖1比较多一点，这篇文章讲述了npm install的三个用法：网址链接\n2.大家也可以上NPM官网去看相关文档，对于初学者来说，了解什么是NPM是十分重要的：网址链接\n现在正式开始搭建，我以tranquilpeak主题为例（操作系统为win10）1.安装Hexo,使用win+R命令，在对话框中键入cmd打开CMD窗口，执行npm install -g hexo-cli安装Hexo，安装之后，在该CMD窗口中输入hexo -v,若出现下图所示样子，表明安装成功\n\n\n2.在你的D盘新建一个文件夹（可以是任意盘，不一定是D盘）命名成你想要的名字，我将它命名为myBlog,进入该文件夹，右击鼠标点击Git Bash Here,进入Git Bash命令行，输入hexo init,命令执行完成后再执行命令npm install安装依赖(在Git Bash页面没有进度条显示，请耐心等一两分钟)，再在此窗口执行npm install hexo-deployer-git --save(这个插件部署的时候要用，不然无法部署到Github仓库)，关闭Git Bash窗口，进入你博客文件夹的根目录，打开_config.yml文件，找到deploy字段，加入下列代码：\n1234deploy:  type: git  repo: https://github.com/chilo-hzl/chilo-hzl.github.io.git  branch: master\n\n请将上面的chilo-hzl/chilo-hzl.github.io字段修改成你自己的，在这个文件中继续修改，请修改title,description,author,url,url为你的博客url(例如我的是：https://chilo-hzl.github.io/ )，点击 网址链接  查看主题作者的配置指导继续配置，内容是英文，如果你英语不好的话，我建议你用谷歌翻译，在Language configuration中，打开tranquilpeak的languages文件夹，找到author字段（在页面尾部）键入bio和job的值 （这两个值将会在你头像下显示）。主题作者写的配置文件比较详细，我把一些作者说的不太清楚的再说一下，再把我踩的坑说一下，还有一些大家暂时用不到的配置说一下:\na. 在博客根目录_config_yml中的plugins字段要写成Plugins，不然hexo s命令会出错\nb. 按照配置文档配置主题时顺序不能乱，否则会出现严重错误（比如一个字段本应该在A页面显示，却在B页面显示）\nc. Google Analytics和Modifying the theme这两个你刚开始搭建的时候暂时不要动，等你把这个主题的代码研究差不多的时候你再做配置和修改\nd. 在搭建的时候遇到问题首先检查自己是否安装了相关插件，如果还不能解决的话上Github的issues查看是否有关于该问题的解决方案，其次再百度，如果还是不能解决的话，你可以在Github的issues页面对主题作者提问，一般的话他都会回复你，发现主题BUG的话你也可以对他open issue.\ne. 写博客的时候如果用到引用标签（类似标签都是这样）的话要注意：\n12345# one&#123;% blockquote david %&#125;block1&#123;% endblockquote %&#125;## two  &lt;!--这一行会解析错误--&gt;&#123;% blockquote frank %&#125;block2&#123;% endblockquote %&#125;\n\n123456789# one&#123;% blockquote david %&#125;block1&#123;% endblockquote %&#125;## two  &lt;!--这样写的话这一行才会正确解析（这跟Hexo的渲染库函数有关）--&gt;&#123;% blockquote frank %&#125;block2&#123;% endblockquote %&#125;\n\nf. 用Typora编辑器写完代码块后应选择语言，不然行号显示不出来\ng. 在博客根目录_config.yml文件中配置algolia要注意：\n123456789101112131415algolia:  appId: \"你的appId,在algolia控制台中将它粘贴到这里\"  apiKey: \"你的apiKey,在algolia控制台中将它粘贴到这里\"  adminApiKey: \"你的adminApiKey,在algolia控制台中将它粘贴到这里\"  chunkSize: 5000 &lt;!--每个批次上传到algolia服务器的博客数（当博客数量较多时hexo会分批上传到algolia服务器）--&gt;  indexName: \"你的博客在algolia上的索引名\" &lt;!--索引由记录构成，单个记录相当于一篇博客中要检索的字段--&gt;  fields: &lt;!--在单个记录上的键值对，起到博客可搜索的作用--&gt;    - content:strip:truncate,0,500 &lt;!--爬虫抓取文章的前500字与你输入的字段进行比较，值越小，搜索速度越快（搜索的字段为内容中的字段时）--&gt;    - excerpt &lt;!--摘录部分的值，不能用excerpt:strip的用法，用的话在检索后会出现undefined（但是不影响检索文章）,具体原因我还没有搞清楚--&gt;    - permalink    - thumbnailImageUrl &lt;!--索引图片的URL--&gt;    - categories    - tags    - title    - date\n\n\n\nh. 将内容推送到远端仓库时执行下面的代码\n12345hexo clean &lt;!--清除本地的缓存--&gt;hexo g &lt;!--扫描文件目录，生成public文件夹--&gt;hexo s &lt;!--这一步将本地端作为服务器，在本地端口看生成了网页，起到一个预览的作用（这一步可以省略）--&gt;hexo algolia &lt;!--将文件要检索的字段上传至algolia服务器，这样你才能在自己的网站上搜索自己的文章--&gt;hexo d &lt;!--将文件目录上传至远端仓库--&gt;\n\n剩下的话应该不是问题，你只要按照主题作者的配置文件一步步来，你应该可以正常搭建出来的，但是每个人的情况可能不一样，但不要怕，大不了从头再来，多试几次就好了。\n1.在软件开发过程中，程序是模块化的，每个人开发程序的一部分，假如有一个程序模块由A,B开发,有一个程序模块由C来开发，只有C把A和B开发的代码块放入自己的程序中，结合C自己开发的代码块，C自己的程序模块才能正常运行，相对C而言，A代码块和B代码块就是C代码块的依赖. ↩","dateCreated":"2020-02-16T22:54:53+08:00","dateModified":"2020-03-01T22:23:06+08:00","datePublished":"2020-02-16T22:54:53+08:00","description":"在这篇博客中我将告诉你如何搭建属于自己的hexo博客网站","headline":"如何搭建hexo博客","image":["chatu2.jpg","chatu1.jpg"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"},"publisher":{"@type":"Organization","name":"chilo-hzl","sameAs":["https://github.com/chilo-hzl","/contact"],"image":"gravatar.jpg","logo":{"@type":"ImageObject","url":"gravatar.jpg"}},"url":"https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/","keywords":"hexo","thumbnailUrl":"chatu2.jpg"}</script>
-    <meta name="description" content="在这篇博客中我将告诉你如何搭建属于自己的hexo博客网站">
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"chilo-hzl","sameAs":["https://github.com/chilo-hzl","/contact"],"image":"gravatar.jpg"},"articleBody":"\n\n刚开始学习栈和队列的时候很疑惑，不是已经有链表和数组了吗，要栈和队列干嘛，刚开始的时候我就把他们理解错了。\n首先在你学习栈和队列的时候你应该熟悉链表和数组，链表和数组都是数据的不同存储方式，链表是用到存储空间的时候开辟，就是说你能动态调整它，但是数组是一开始就需要开辟好所需要的存储空间，不能动态调整，这就是链表和数组的区别\n你应该有这样的一个概念，链表和数组是数据的存储方式，而栈和队列是数据的组织方式，也可理解成是一种操作数据的方式，其实我们在学习程序语言（此时你还没有还没有学习栈和队列）的时候已经在用栈和队列了，只不过你的脑海里没有这个概念罢了，让我们以下面的代码说明\n12345678910111213141516include&lt;iostream&gt;using namespace std;int main()&#123;\tint arr[10],i;    cout&lt;&lt;\"请输入十个数：\"&lt;&lt;endl;    for(i=0;i&lt;10;i++)        cin&gt;&gt;arr[i];    cout&lt;&lt;endl;    for(i=0;i&lt;10;i++)        cout&lt;&lt;arr[i]&lt;&lt;\" \";    cout&lt;&lt;endl;    for(i=9;i&gt;=0;i--)        cout&lt;&lt;arr[i]&lt;&lt;\" \";    cout&lt;&lt;endl;    return 0;&#125;\n\n在上面的代码中，我以c++写的给一个数组赋值，然后输出该数组的值为例，在该例中，我们从下标为零的位置给数组赋值，输出数据我们使用两种方式，一种是从下标为0的位置开始输出，一种是从下标为9的位置开始输出。我们从下标为0的地方给数组赋值，从下标为0的地方输出数组存储的元素，这样操纵数据的方式其实就是队列，因为队列是先进先出表，我们从左到右存储数据，又从左到右提取元素，只不过我们并没有将操作数据的方式用函数封装起来；我们从下标为0的地方给数组赋值，从下标为9的地方输出数组存储的元素，这样操纵数据的方式其实就是栈，我们仔细想想，栈是先进后出表，我们从左到右赋值，从右到左输出，这不就是栈吗，在该例中我们并没有将它用函数封装起来。\n当然你也可以用链表存储该例中的十个数，原理都是一样的，只不过在链表中，我们并不是用下标标识元素的存储位置，而是用指针标识元素的位置，但你应当注意的是，在谭浩强的c++程序设计一书中，他将元素的存储地址称为指针，但是在李春葆编写的数据结构教程（第五版）中，他在讲述栈和队列的时候，以数组作为存储结构的时候，他将下标也称为指针，但重点是你要理解他们(无论是存储地址还是数组下标)都是起到一个标识元素存储位置的作用，这两位作者给指针的定义不一样，你不必纠结于此，正如一千个读者中有一千个哈利波特，一千个作者也可以给同一个词下一千个定义。\n你还可以这样理解，数组和链表就是一本书，把栈和队列类比成怎么样读这本书，你可以这样形容，你坐着读书是栈，躺着读书是队列。\n是否需要将操作数据的方式用函数封装起来，这跟你实际开发的程序有关，相信通过上面的讲解，大家肯定理解了栈和队列吧。","dateCreated":"2020-03-14T17:35:50+08:00","dateModified":"2020-03-14T18:47:04+08:00","datePublished":"2020-03-14T17:35:50+08:00","description":"对于不太理解栈和队列的小伙伴可以看一下这篇博客","headline":"如何理解栈和队列","image":["index.jpg","cover.jpg"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"},"publisher":{"@type":"Organization","name":"chilo-hzl","sameAs":["https://github.com/chilo-hzl","/contact"],"image":"gravatar.jpg","logo":{"@type":"ImageObject","url":"gravatar.jpg"}},"url":"https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/","keywords":"栈和队列","thumbnailUrl":"index.jpg"}</script>
+    <meta name="description" content="对于不太理解栈和队列的小伙伴可以看一下这篇博客">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="如何搭建hexo博客">
-<meta property="og:url" content="https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:title" content="如何理解栈和队列">
+<meta property="og:url" content="https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/index.html">
 <meta property="og:site_name" content="chilo-hzl&#39;s Blog">
-<meta property="og:description" content="在这篇博客中我将告诉你如何搭建属于自己的hexo博客网站">
+<meta property="og:description" content="对于不太理解栈和队列的小伙伴可以看一下这篇博客">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/web.jpg">
-<meta property="og:image" content="https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/peizhi2.jpg">
-<meta property="article:published_time" content="2020-02-16T14:54:53.000Z">
-<meta property="article:modified_time" content="2020-03-01T14:23:06.719Z">
+<meta property="article:published_time" content="2020-03-14T09:35:50.000Z">
+<meta property="article:modified_time" content="2020-03-14T10:47:04.315Z">
 <meta property="article:author" content="chilo-hzl">
-<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="栈和队列">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/web.jpg">
     
     
         
@@ -37,12 +34,12 @@
         <meta property="og:image" content="https://www.chilo-hzl.cn/assets/images/gravatar.jpg"/>
     
     
-        <meta property="og:image" content="https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/chatu2.jpg"/>
-        <meta class="swiftype" name="image" data-type="enum" content="https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/chatu2.jpg"/>
+        <meta property="og:image" content="https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/index.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/index.jpg"/>
     
     
-        <meta property="og:image" content="https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/chatu1.jpg"/>
-        <meta class="swiftype" name="image" data-type="enum" content="https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/chatu1.jpg"/>
+        <meta property="og:image" content="https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/cover.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/cover.jpg"/>
     
     
     <!--STYLES-->
@@ -253,7 +250,7 @@
         <div class="post-header-cover
                     text-center
                     post-header-cover--partial"
-             style="background-image:url('/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/chatu1.jpg');"
+             style="background-image:url('/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/cover.jpg');"
              data-behavior="4">
             
         </div>
@@ -269,20 +266,20 @@
         <div class="post-header main-content-wrap text-center">
     
         <h1 class="post-title">
-            如何搭建hexo博客
+            如何理解栈和队列
         </h1>
     
     
         <div class="post-meta">
-    <time datetime="2020-02-16T22:54:53+08:00">
+    <time datetime="2020-03-14T17:35:50+08:00">
 	
-		    Feb 16, 2020
+		    Mar 14, 2020
     	
     </time>
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/technology/">technology</a>, <a class="category-link" href="/categories/technology/hexo/">hexo</a>
+    <a class="category-link" href="/categories/technology/">technology</a>, <a class="category-link" href="/categories/technology/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
 
 
     
@@ -296,57 +293,15 @@
         <div class="main-content-wrap">
             <!--excerpt-->
 
-<h1 id="table-of-contents">Table of Contents</h1><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#首先在搭建之前，你应该具备以下知识"><span class="toc-text">首先在搭建之前，你应该具备以下知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git是分布式版本控制系统，Github是代码托管平台，下面超链接比较优质的内容，你可以查看"><span class="toc-text">Git是分布式版本控制系统，Github是代码托管平台，下面超链接比较优质的内容，你可以查看</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web前端技术"><span class="toc-text">Web前端技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NPM"><span class="toc-text">NPM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#现在正式开始搭建，我以tranquilpeak主题为例（操作系统为win10）"><span class="toc-text">现在正式开始搭建，我以tranquilpeak主题为例（操作系统为win10）</span></a></li></ol>
+<p><strong>刚开始学习栈和队列的时候很疑惑，不是已经有链表和数组了吗，要栈和队列干嘛，刚开始的时候我就把他们理解错了。</strong></p>
+<p><strong>首先在你学习栈和队列的时候你应该熟悉链表和数组，链表和数组都是数据的不同存储方式，链表是用到存储空间的时候开辟，就是说你能动态调整它，但是数组是一开始就需要开辟好所需要的存储空间，不能动态调整，这就是链表和数组的区别</strong></p>
+<p><strong>你应该有这样的一个概念，链表和数组是数据的存储方式，而栈和队列是数据的组织方式，也可理解成是一种操作数据的方式，其实我们在学习程序语言（此时你还没有还没有学习栈和队列）的时候已经在用栈和队列了，只不过你的脑海里没有这个概念罢了，让我们以下面的代码说明</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">include&lt;iostream&gt;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> arr[<span class="number">10</span>],i;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"请输入十个数："</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;arr[i];</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;arr[i]&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">9</span>;i&gt;=<span class="number">0</span>;i--)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;arr[i]&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="首先在搭建之前，你应该具备以下知识"><a href="#首先在搭建之前，你应该具备以下知识" class="headerlink" title="首先在搭建之前，你应该具备以下知识"></a>首先在搭建之前，你应该具备以下知识</h3><p><strong>1.熟悉web前端技术（HTML,CSS,Javascript）</strong></p>
-<p><strong>2.有Github账号，熟悉Github上面的操作</strong></p>
-<p><strong>3.熟悉Git, 电脑上安装Git</strong></p>
-<p><strong>4.有Node.js基础知识，电脑上安装Node.js,因为Hexo博客框架是基于Node.js写的</strong></p>
-<p><strong>5.有安装npm软件包的相关知识</strong></p>
-<p><strong>6.熟悉Hexo开发文档</strong></p>
-<div class="alert info"><p><strong>如果你不熟悉上面内容，我建议你先学习上面内容，这样在搭建过程中如果遇到问题你可以通过控制台打印的信息快速找到自己在哪出错，并且下载模板后你完全可以根据自己的需求定制页面内容，做技术一定要知道所以然，而不是简单的copy</strong></p>
-</div>
-
-<h3 id="Git是分布式版本控制系统，Github是代码托管平台，下面超链接比较优质的内容，你可以查看"><a href="#Git是分布式版本控制系统，Github是代码托管平台，下面超链接比较优质的内容，你可以查看" class="headerlink" title="Git是分布式版本控制系统，Github是代码托管平台，下面超链接比较优质的内容，你可以查看"></a>Git是分布式版本控制系统，Github是代码托管平台，下面超链接比较优质的内容，你可以查看</h3><p><strong>1.这篇博文告诉你怎样注册Github账号，一些基本的Github操作，如何下载Git，如何初步使用Git：<a href="https://blog.csdn.net/tichimi3375/article/details/79844514" target="_blank" rel="noopener">网页链接</a></strong></p>
-<p><strong>2.这个是Git操作的视频讲解，这个老师讲的很好，他后面课程中的Eclipse部分大家可以不用听，因为暂时用不到：<a href="https://www.bilibili.com/video/av59634634" target="_blank" rel="noopener">视频地址链接</a></strong></p>
-<p><strong>3.这个是廖雪峰老师的Git讲解，你可以看一下：<a href="https://www.liaoxuefeng.com/wiki/896043488029600" target="_blank" rel="noopener">网址链接</a></strong></p>
-<p><strong>4.这篇文章讲述了Github的详细安装过程以及配置：<a href="https://blog.csdn.net/qq_37512323/article/details/80693445" target="_blank" rel="noopener">网址链接</a></strong></p>
-<div class="alert warning"><p><strong>在这个过程中你可能会遇到一些专业术语，如果你查资料可以解决就ok,如果你查了好多资料还是一头雾水的话，你可以先放下，后续实践中你会慢慢理解的，还有大家不要怕出错，大不了从头再来，千万不要害怕。当然上述链接可能并不能满足你的需求，没关系，你要多百度。</strong></p>
-</div>
-
-<h3 id="Web前端技术"><a href="#Web前端技术" class="headerlink" title="Web前端技术"></a>Web前端技术</h3><p><strong>1.这个平台虽然比较老，但内容真的很优质，包括HTML，CSS，JavaScript以及其他的一些Web技术，上面每个都有实例，强烈推荐：<a href="https://www.w3school.com.cn/h.asp" target="_blank" rel="noopener">网址链接</a></strong></p>
-<p><strong>2.这个视频使我首次接触到的Web前端技术，也是因为看来这个视频，我觉得Web前端技术很酷，很好玩，上面孙俏老师讲的很好：<a href="https://www.icourse163.org/course/BJFU-1003382003?tid=1003609002" target="_blank" rel="noopener">网址链接</a></strong></p>
-<img src="/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/web.jpg" class="">
-
-<h3 id="NPM"><a href="#NPM" class="headerlink" title="NPM"></a>NPM</h3><p><strong>1.初学者主要使用<code>npm install</code>命令安装依赖<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>比较多一点，这篇文章讲述了<code>npm install</code>的三个用法：<a href="https://www.cnblogs.com/ycg-myblog/p/10112217.html" target="_blank" rel="noopener">网址链接</a></strong></p>
-<p><strong>2.大家也可以上NPM官网去看相关文档，对于初学者来说，了解什么是NPM是十分重要的：<a href="https://docs.npmjs.com/" target="_blank" rel="noopener">网址链接</a></strong></p>
-<h3 id="现在正式开始搭建，我以tranquilpeak主题为例（操作系统为win10）"><a href="#现在正式开始搭建，我以tranquilpeak主题为例（操作系统为win10）" class="headerlink" title="现在正式开始搭建，我以tranquilpeak主题为例（操作系统为win10）"></a>现在正式开始搭建，我以tranquilpeak主题为例（操作系统为win10）</h3><p><strong>1.安装Hexo,使用<code>win+R</code>命令，在对话框中键入<code>cmd</code>打开CMD窗口，执行<code>npm install -g hexo-cli</code>安装Hexo，安装之后，在该CMD窗口中输入<code>hexo -v</code>,若出现下图所示样子，表明安装成功</strong></p>
-<img src="/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/peizhi2.jpg" class="">
-
-<p><strong>2.在你的D盘新建一个文件夹（可以是任意盘，不一定是D盘）命名成你想要的名字，我将它命名为myBlog,进入该文件夹，右击鼠标点击Git Bash Here,进入Git Bash命令行，输入<code>hexo init</code>,命令执行完成后再执行命令<code>npm install</code>安装依赖(在Git Bash页面没有进度条显示，请耐心等一两分钟)，再在此窗口执行<code>npm install hexo-deployer-git --save</code>(这个插件部署的时候要用，不然无法部署到Github仓库)，关闭Git Bash窗口，进入你博客文件夹的根目录，打开_config.yml文件，找到deploy字段，加入下列代码：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/chilo-hzl/chilo-hzl.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-
-<p><strong>请将上面的chilo-hzl/chilo-hzl.github.io字段修改成你自己的，在这个文件中继续修改，请修改title,description,author,url,url为你的博客url(例如我的是：<a href="https://chilo-hzl.github.io/" target="_blank" rel="noopener">https://chilo-hzl.github.io/</a> )，点击 <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/DOCUMENTATION.md" target="_blank" rel="noopener">网址链接</a>  查看主题作者的配置指导继续配置，内容是英文，如果你英语不好的话，我建议你用谷歌翻译，在Language configuration中，打开tranquilpeak的languages文件夹，找到author字段（在页面尾部）键入bio和job的值 （这两个值将会在你头像下显示）。主题作者写的配置文件比较详细，我把一些作者说的不太清楚的再说一下，再把我踩的坑说一下，还有一些大家暂时用不到的配置说一下:</strong></p>
-<p><strong>a. 在博客根目录_config_yml中的<code>plugins</code>字段要写成<code>Plugins</code>，不然<code>hexo s</code>命令会出错</strong></p>
-<p><strong>b. 按照配置文档配置主题时顺序不能乱，否则会出现严重错误（比如一个字段本应该在A页面显示，却在B页面显示）</strong></p>
-<p><strong>c. Google Analytics和Modifying the theme这两个你刚开始搭建的时候暂时不要动，等你把这个主题的代码研究差不多的时候你再做配置和修改</strong></p>
-<p><strong>d. 在搭建的时候遇到问题首先检查自己是否安装了相关插件，如果还不能解决的话上Github的issues查看是否有关于该问题的解决方案，其次再百度，如果还是不能解决的话，你可以在Github的issues页面对主题作者提问，一般的话他都会回复你，发现主题BUG的话你也可以对他open issue.</strong></p>
-<p><strong>e. 写博客的时候如果用到引用标签（类似标签都是这样）的话要注意：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># one</span></span><br><span class="line">&#123;% blockquote david %&#125;block1&#123;% endblockquote %&#125;</span><br><span class="line"></span><br><span class="line"><span class="section">## two  &lt;!--这一行会解析错误--&gt;</span></span><br><span class="line">&#123;% blockquote frank %&#125;block2&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># one</span></span><br><span class="line">&#123;% blockquote david %&#125;</span><br><span class="line">block1</span><br><span class="line">&#123;% endblockquote %&#125;</span><br><span class="line"></span><br><span class="line"><span class="section">## two  &lt;!--这样写的话这一行才会正确解析（这跟Hexo的渲染库函数有关）--&gt;</span></span><br><span class="line">&#123;% blockquote frank %&#125;</span><br><span class="line">block2</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>f. 用Typora编辑器写完代码块后应选择语言，不然行号显示不出来</strong></p>
-<p><strong>g. 在博客根目录_config.yml文件中配置algolia要注意：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">algolia:</span><br><span class="line">  appId: "你的appId,在algolia控制台中将它粘贴到这里"</span><br><span class="line">  apiKey: "你的apiKey,在algolia控制台中将它粘贴到这里"</span><br><span class="line">  adminApiKey: "你的adminApiKey,在algolia控制台中将它粘贴到这里"</span><br><span class="line">  chunkSize: 5000 <span class="xml"><span class="comment">&lt;!--每个批次上传到algolia服务器的博客数（当博客数量较多时hexo会分批上传到algolia服务器）--&gt;</span></span></span><br><span class="line">  indexName: "你的博客在algolia上的索引名" <span class="xml"><span class="comment">&lt;!--索引由记录构成，单个记录相当于一篇博客中要检索的字段--&gt;</span></span></span><br><span class="line">  fields: <span class="xml"><span class="comment">&lt;!--在单个记录上的键值对，起到博客可搜索的作用--&gt;</span></span></span><br><span class="line"><span class="bullet">    - </span>content:strip:truncate,0,500 <span class="xml"><span class="comment">&lt;!--爬虫抓取文章的前500字与你输入的字段进行比较，值越小，搜索速度越快（搜索的字段为内容中的字段时）--&gt;</span></span></span><br><span class="line"><span class="bullet">    - </span>excerpt <span class="xml"><span class="comment">&lt;!--摘录部分的值，不能用excerpt:strip的用法，用的话在检索后会出现undefined（但是不影响检索文章）,具体原因我还没有搞清楚--&gt;</span></span></span><br><span class="line"><span class="bullet">    - </span>permalink</span><br><span class="line"><span class="bullet">    - </span>thumbnailImageUrl <span class="xml"><span class="comment">&lt;!--索引图片的URL--&gt;</span></span></span><br><span class="line"><span class="bullet">    - </span>categories</span><br><span class="line"><span class="bullet">    - </span>tags</span><br><span class="line"><span class="bullet">    - </span>title</span><br><span class="line"><span class="bullet">    - </span>date</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>h. 将内容推送到远端仓库时执行下面的代码</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &lt;!--清除本地的缓存--&gt;</span><br><span class="line">hexo g &lt;!--扫描文件目录，生成public文件夹--&gt;</span><br><span class="line">hexo s &lt;!--这一步将本地端作为服务器，在本地端口看生成了网页，起到一个预览的作用（这一步可以省略）--&gt;</span><br><span class="line">hexo algolia &lt;!--将文件要检索的字段上传至algolia服务器，这样你才能在自己的网站上搜索自己的文章--&gt;</span><br><span class="line">hexo d &lt;!--将文件目录上传至远端仓库--&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>剩下的话应该不是问题，你只要按照主题作者的配置文件一步步来，你应该可以正常搭建出来的，但是每个人的情况可能不一样，但不要怕，大不了从头再来，多试几次就好了。</strong></p>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style:none; padding-left: 0;"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">1.</span><span style="display: inline-block; vertical-align: top;">在软件开发过程中，程序是模块化的，每个人开发程序的一部分，假如有一个程序模块由A,B开发,有一个程序模块由C来开发，只有C把A和B开发的代码块放入自己的程序中，结合C自己开发的代码块，C自己的程序模块才能正常运行，相对C而言，A代码块和B代码块就是C代码块的依赖.</span><a href="#fnref:1" rev="footnote"> ↩</a></li></ol></div></div>
+<p><strong>在上面的代码中，我以c++写的给一个数组赋值，然后输出该数组的值为例，在该例中，我们从下标为零的位置给数组赋值，输出数据我们使用两种方式，一种是从下标为0的位置开始输出，一种是从下标为9的位置开始输出。我们从下标为0的地方给数组赋值，从下标为0的地方输出数组存储的元素，这样操纵数据的方式其实就是队列，因为队列是先进先出表，我们从左到右存储数据，又从左到右提取元素，只不过我们并没有将操作数据的方式用函数封装起来；我们从下标为0的地方给数组赋值，从下标为9的地方输出数组存储的元素，这样操纵数据的方式其实就是栈，我们仔细想想，栈是先进后出表，我们从左到右赋值，从右到左输出，这不就是栈吗，在该例中我们并没有将它用函数封装起来。</strong></p>
+<p><strong>当然你也可以用链表存储该例中的十个数，原理都是一样的，只不过在链表中，我们并不是用下标标识元素的存储位置，而是用指针标识元素的位置，但你应当注意的是，在谭浩强的c++程序设计一书中，他将元素的存储地址称为指针，但是在李春葆编写的数据结构教程（第五版）中，他在讲述栈和队列的时候，以数组作为存储结构的时候，他将下标也称为指针，但重点是你要理解他们(无论是存储地址还是数组下标)都是起到一个标识元素存储位置的作用，这两位作者给指针的定义不一样，你不必纠结于此，正如一千个读者中有一千个哈利波特，一千个作者也可以给同一个词下一千个定义。</strong></p>
+<p><strong>你还可以这样理解，数组和链表就是一本书，把栈和队列类比成怎么样读这本书，你可以这样形容，你坐着读书是栈，躺着读书是队列。</strong></p>
+<p><strong>是否需要将操作数据的方式用函数封装起来，这跟你实际开发的程序有关，相信通过上面的讲解，大家肯定理解了栈和队列吧。</strong></p>
             
 
 
@@ -357,7 +312,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/hexo/" rel="tag">hexo</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/" rel="tag">栈和队列</a>
 
             </div>
         
@@ -367,14 +322,11 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    
-                <a
-                    class="post-action-btn btn btn--default tooltip--top"
-                    href="/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
-                    data-tooltip="将hexo部署到coding上"
-                    aria-label="PREVIOUS: 将hexo部署到coding上"
-                >
-                    
+                    <a
+                        class="post-action-btn btn btn--disabled"
+                        aria-hidden="true"
+                    >
+                        
                         <i class="fa fa-angle-left" aria-hidden="true"></i>
                         <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
                     </a>
@@ -384,9 +336,9 @@
                     
                 <a
                     class="post-action-btn btn btn--default tooltip--top"
-                    href="/2020/02/13/%E5%85%8D%E8%B4%B9%E7%A6%8F%E5%88%A9/"
-                    data-tooltip="免费福利"
-                    aria-label="NEXT: 免费福利"
+                    href="/2020/03/08/%E5%A6%82%E4%BD%95%E7%94%A8JavaScript%E5%B0%86%E6%95%B0%E6%8D%AE%E6%B8%B2%E6%9F%93%E6%88%90%E8%A1%A8%E6%A0%BC/"
+                    data-tooltip="如何用JavaScript将数据渲染成表格"
+                    aria-label="NEXT: 如何用JavaScript将数据渲染成表格"
                 >
                     
                         <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
@@ -411,7 +363,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                     title="Share on Facebook"
                     aria-label="Share on Facebook"
                 >
@@ -424,7 +376,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://twitter.com/intent/tweet?text=https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                    target="new" href="https://twitter.com/intent/tweet?text=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                     title="Share on Twitter"
                     aria-label="Share on Twitter"
                 >
@@ -437,7 +389,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://plus.google.com/share?url=https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                    target="new" href="https://plus.google.com/share?url=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                     title="Share on Google+"
                     aria-label="Share on Google+"
                 >
@@ -450,7 +402,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="http://service.weibo.com/share/share.php?&amp;title=https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                    target="new" href="http://service.weibo.com/share/share.php?&amp;title=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                     title="Share on Weibo"
                     aria-label="Share on Weibo"
                 >
@@ -463,7 +415,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/&amp;title=如何搭建hexo博客"
+                    target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/&amp;title=如何理解栈和队列"
                     title="Share on QQ"
                     aria-label="Share on QQ"
                 >
@@ -476,7 +428,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                    target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                     title="Share on Qzone"
                     aria-label="Share on Qzone"
                 >
@@ -489,7 +441,7 @@
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#table-of-contents" aria-label="Table of Contents">
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
             
                 <i class="fa fa-list" aria-hidden="true"></i>
             </a>
@@ -521,14 +473,11 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    
-                <a
-                    class="post-action-btn btn btn--default tooltip--top"
-                    href="/2020/03/01/%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0coding%E4%B8%8A/"
-                    data-tooltip="将hexo部署到coding上"
-                    aria-label="PREVIOUS: 将hexo部署到coding上"
-                >
-                    
+                    <a
+                        class="post-action-btn btn btn--disabled"
+                        aria-hidden="true"
+                    >
+                        
                         <i class="fa fa-angle-left" aria-hidden="true"></i>
                         <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
                     </a>
@@ -538,9 +487,9 @@
                     
                 <a
                     class="post-action-btn btn btn--default tooltip--top"
-                    href="/2020/02/13/%E5%85%8D%E8%B4%B9%E7%A6%8F%E5%88%A9/"
-                    data-tooltip="免费福利"
-                    aria-label="NEXT: 免费福利"
+                    href="/2020/03/08/%E5%A6%82%E4%BD%95%E7%94%A8JavaScript%E5%B0%86%E6%95%B0%E6%8D%AE%E6%B8%B2%E6%9F%93%E6%88%90%E8%A1%A8%E6%A0%BC/"
+                    data-tooltip="如何用JavaScript将数据渲染成表格"
+                    aria-label="NEXT: 如何用JavaScript将数据渲染成表格"
                 >
                     
                         <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
@@ -565,7 +514,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                     title="Share on Facebook"
                     aria-label="Share on Facebook"
                 >
@@ -578,7 +527,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://twitter.com/intent/tweet?text=https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                    target="new" href="https://twitter.com/intent/tweet?text=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                     title="Share on Twitter"
                     aria-label="Share on Twitter"
                 >
@@ -591,7 +540,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="https://plus.google.com/share?url=https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                    target="new" href="https://plus.google.com/share?url=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                     title="Share on Google+"
                     aria-label="Share on Google+"
                 >
@@ -604,7 +553,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="http://service.weibo.com/share/share.php?&amp;title=https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                    target="new" href="http://service.weibo.com/share/share.php?&amp;title=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                     title="Share on Weibo"
                     aria-label="Share on Weibo"
                 >
@@ -617,7 +566,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/&amp;title=如何搭建hexo博客"
+                    target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/&amp;title=如何理解栈和队列"
                     title="Share on QQ"
                     aria-label="Share on QQ"
                 >
@@ -630,7 +579,7 @@
             <li class="post-action hide-xs">
                 <a
                     class="post-action-btn btn btn--default"
-                    target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                    target="new" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                     title="Share on Qzone"
                     aria-label="Share on Qzone"
                 >
@@ -643,7 +592,7 @@
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#table-of-contents" aria-label="Table of Contents">
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
             
                 <i class="fa fa-list" aria-hidden="true"></i>
             </a>
@@ -664,7 +613,7 @@
                     <a
                         class="share-option-btn"
                         target="new"
-                        href="https://www.facebook.com/sharer/sharer.php?u=https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                        href="https://www.facebook.com/sharer/sharer.php?u=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                         aria-label="Share on Facebook"
                     >
                         <i class="fab fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span>
@@ -677,7 +626,7 @@
                     <a
                         class="share-option-btn"
                         target="new"
-                        href="https://twitter.com/intent/tweet?text=https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                        href="https://twitter.com/intent/tweet?text=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                         aria-label="Share on Twitter"
                     >
                         <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
@@ -690,7 +639,7 @@
                     <a
                         class="share-option-btn"
                         target="new"
-                        href="https://plus.google.com/share?url=https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                        href="https://plus.google.com/share?url=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                         aria-label="Share on Google+"
                     >
                         <i class="fab fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
@@ -703,7 +652,7 @@
                     <a
                         class="share-option-btn"
                         target="new"
-                        href="http://service.weibo.com/share/share.php?&amp;title=https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                        href="http://service.weibo.com/share/share.php?&amp;title=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                         aria-label="Share on Weibo"
                     >
                         <i class="fab fa-weibo" aria-hidden="true"></i><span>Share on Weibo</span>
@@ -716,7 +665,7 @@
                     <a
                         class="share-option-btn"
                         target="new"
-                        href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/&amp;title=如何搭建hexo博客"
+                        href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/&amp;title=如何理解栈和队列"
                         aria-label="Share on QQ"
                     >
                         <i class="fab fa-qq" aria-hidden="true"></i><span>Share on QQ</span>
@@ -729,7 +678,7 @@
                     <a
                         class="share-option-btn"
                         target="new"
-                        href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.chilo-hzl.cn/2020/02/16/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"
+                        href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.chilo-hzl.cn/2020/03/14/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"
                         aria-label="Share on Qzone"
                     >
                         <i class="fa fa-star" aria-hidden="true"></i><span>Share on Qzone</span>
